@@ -8,9 +8,41 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+1. Larissa - A Jovem Aspirante:
+Idade: 18 anos
+Ocupação: Estagiária e estudante de Educação Física
+Objetivo: Tornar-se uma profissional de referência na área de saúde e fitness.
+Perfil: Larissa é apaixonada por esportes desde a infância. Atualmente, ela está cursando Educação Física e faz estágio em uma grande empresa, o que exige que ela equilibre sua rotina entre estudos, trabalho, e treinos na academia da faculdade. Larissa é determinada e focada em manter um estilo de vida saudável, acreditando que o sucesso vem do cuidado com o corpo e mente. Ela usa o app para planejar seus treinos, acompanhar seu progresso e garantir que está no caminho certo para alcançar suas metas, tanto em termos de condicionamento físico quanto de desenvolvimento profissional.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+2. Pedro - O Profissional Ocupado:
+Idade: 35 anos
+Ocupação: Engenheiro em uma multinacional
+Objetivo: Manter a forma física e aliviar o estresse do trabalho.
+Perfil: Pedro trabalha em um ambiente corporativo exigente, com longas horas e prazos apertados. Ele frequenta a academia da empresa nas primeiras horas da manhã para garantir que consegue treinar antes de começar o dia. Pedro valoriza a eficiência e praticidade, utilizando o app para acessar suas fichas de treino personalizadas e ajustar os exercícios de acordo com o tempo disponível e os níveis de energia. Ele aprecia que o app monitora seu progresso e sugere mudanças conforme ele avança, garantindo que seu tempo na academia seja bem aproveitado.
+
+3. Júlia - A Mãe Atarefada:
+Idade: 42 anos
+Ocupação: Assistente administrativa e mãe de dois filhos
+Objetivo: Aumentar a energia e melhorar a saúde para acompanhar a rotina dos filhos.
+Perfil: Júlia tem uma vida agitada, dividindo-se entre o trabalho e as responsabilidades familiares. Ela frequenta a academia logo após deixar os filhos na escola, aproveitando o intervalo antes de iniciar seu expediente. Júlia procura treinos que sejam eficazes e que maximizem o tempo que ela passa na academia. O app oferece a ela fichas de treino adaptadas às suas necessidades, com foco em exercícios que proporcionem resultados rápidos, além de acompanhar seu progresso ao longo do tempo, motivando-a a continuar cuidando de sua saúde.
+
+4. Carlos - O Atleta Experiente:
+Idade: 28 anos
+Ocupação: Atleta amador e competidor de triatlo
+Objetivo: Melhorar o desempenho nas competições e evitar lesões.
+Perfil: Carlos leva o esporte a sério, treinando intensamente para suas competições de triatlo. Ele frequenta a academia para complementar seu treinamento com exercícios de força e resistência. Carlos utiliza o app para acessar fichas de treino altamente especializadas, monitorar seu progresso em tempo real e ajustar os treinos conforme necessário. Ele também valoriza as análises detalhadas de desempenho que o app oferece, ajudando-o a identificar áreas de melhoria e a evitar lesões durante sua preparação.
+
+5. Ana - A Iniciante Motivada:
+Idade: 24 anos
+Ocupação: Assistente de marketing
+Objetivo: Perder peso e adotar um estilo de vida mais saudável.
+Perfil: Ana decidiu recentemente mudar seu estilo de vida e começou a frequentar a academia. Ela está animada, mas também um pouco insegura sobre como usar os equipamentos e realizar os exercícios corretamente. O app é seu guia na academia, oferecendo fichas de treino simples e fáceis de seguir, além de dicas sobre a utilização correta dos aparelhos. Ana valoriza a interface amigável do app, que a motiva a continuar frequentando a academia e a alcançar seus objetivos de forma gradual e segura.
+
+6. Roberto - O Sênior Ativo:
+Idade: 60 anos
+Ocupação: Aposentado
+Objetivo: Manter a saúde, a mobilidade e a independência.
+Perfil: Roberto é um aposentado ativo que frequenta a academia para manter-se saudável e evitar problemas de mobilidade. Ele prefere treinos de baixo impacto, que sejam gentis com suas articulações, mas ainda assim eficazes. O app oferece fichas de treino adaptadas às suas necessidades, com ênfase em exercícios que promovam a força, a flexibilidade e o equilíbrio. Roberto também gosta de acompanhar seu progresso e aprecia que o app oferece lembretes e sugestões para manter uma rotina regular, ajudando-o a viver uma vida ativa e independente.
 
 > **Links Úteis**:
 > - [Rock Content](https://rockcontent.com/blog/personas/)
@@ -20,8 +52,7 @@ Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos 
 > - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
 > - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
 >
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
-
+> 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
