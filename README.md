@@ -11,7 +11,7 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 ## Integrantes
 
 * Daniel Henrique Alves Bicalho Dias
-* Nome completo do aluno 2
+* Bernardo Silva Oliveira
 * Nome completo do aluno 3
 * Nome completo do aluno 4
 
