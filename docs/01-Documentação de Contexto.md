@@ -26,7 +26,9 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 ## Justificativa
 
 Na era digital, a interação entre profissionais de educação física e seus alunos tem se expandido além das academias e estúdios tradicionais. Com a crescente popularidade de aplicativos e plataformas digitais voltados para o bem-estar e a saúde, há uma demanda cada vez maior por soluções que facilitem o acompanhamento dos treinos e a comunicação entre personal trainers e seus clientes.
+
 Atualmente, muitos profissionais e alunos dependem de métodos fragmentados e pouco eficientes para gerenciar treinos, monitorar progressos e ajustar planos de treino, o que pode comprometer a qualidade do acompanhamento e a satisfação dos alunos.
+
 O objetivo principal deste projeto é desenvolver uma aplicação que ofereça as ferramentas necessárias para que os profissionais de educação física e seus alunos possam gerenciar de forma integrada e prática todas as etapas do treinamento, desde o planejamento até o acompanhamento dos resultados e até os planos contratados, melhorando a comunicação e o desempenho no processo de ensino-aprendizagem.
 
 ## Público-Alvo
