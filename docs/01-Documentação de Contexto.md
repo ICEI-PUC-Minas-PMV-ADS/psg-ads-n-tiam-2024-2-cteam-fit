@@ -25,12 +25,9 @@ Apresente também alguns (pelo menos 2) objetivos específicos dependendo de ond
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+Na era digital, a interação entre profissionais de educação física e seus alunos tem se expandido além das academias e estúdios tradicionais. Com a crescente popularidade de aplicativos e plataformas digitais voltados para o bem-estar e a saúde, há uma demanda cada vez maior por soluções que facilitem o acompanhamento dos treinos e a comunicação entre personal trainers e seus clientes.
+Atualmente, muitos profissionais e alunos dependem de métodos fragmentados e pouco eficientes para gerenciar treinos, monitorar progressos e ajustar planos de treino, o que pode comprometer a qualidade do acompanhamento e a satisfação dos alunos.
+O objetivo principal deste projeto é desenvolver uma aplicação que ofereça as ferramentas necessárias para que os profissionais de educação física e seus alunos possam gerenciar de forma integrada e prática todas as etapas do treinamento, desde o planejamento até o acompanhamento dos resultados e até os planos contratados, melhorando a comunicação e o desempenho no processo de ensino-aprendizagem.
 
 ## Público-Alvo
 
