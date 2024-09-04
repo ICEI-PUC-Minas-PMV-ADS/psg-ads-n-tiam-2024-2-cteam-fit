@@ -12,8 +12,11 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 * Daniel Henrique Alves Bicalho Dias
 * Bernardo Silva Oliveira
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Gabriel Augusto Lana Vidal
+* Gustavo Meira Becattini
+* Pedro Henrique da Silva Araújo Queiroz
+* Hebert Tadeu
+* Diogo Augusto
 
 ## Orientador
 
