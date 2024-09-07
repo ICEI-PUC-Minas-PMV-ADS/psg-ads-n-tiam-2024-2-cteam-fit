@@ -16,12 +16,11 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O principal objetivo do aplicativo é oferecer uma solução completa para o controle e gerenciamento da frequência dos treinos, além de centralizar a comunicação entre personal trainers e seus alunos. Com o aplicativo, os usuários poderão monitorar a assiduidade e desempenho em seus treinos, garantindo um acompanhamento eficiente de suas atividades físicas.
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+Além disso, o aplicativo facilitará a divulgação de anúncios por parte dos personal trainers, permitindo que eles compartilhem novidades, ofertas de novos pacotes de treino, horários disponíveis e outros conteúdos relevantes de forma rápida e acessível. Assim, os profissionais terão uma plataforma prática para promover seus serviços e manter seus alunos informados.
+
+Dessa forma, o aplicativo visa melhorar a organização tanto para alunos quanto para personal trainers, promovendo uma experiência mais integrada e colaborativa no gerenciamento de treinos e no compartilhamento de informações.
 
 ## Justificativa
 
