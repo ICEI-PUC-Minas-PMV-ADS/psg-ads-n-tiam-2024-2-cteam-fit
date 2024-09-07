@@ -82,8 +82,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| O sistema deve permitir a criação, leitura, atualização e exclusão (CRUD) de informações relevantes dos dados dos usuários, tais como cadastro e informações de login.
- | ALTA | 
+|RF-001| O sistema deve permitir a criação, leitura, atualização e exclusão (CRUD) de informações relevantes dos dados dos usuários, tais como cadastro e informações de login.| ALTA | 
 |RF-002|  -------  | ------- |
 
 ### Requisitos não Funcionais
