@@ -89,7 +89,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O sistema deve persistir os dados no banco de dados | MÉDIA | 
+|RNF-001| O sistema deve persistir os dados no banco de dados | ALTA | 
 |RNF-002| ------- |  ------- | 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
