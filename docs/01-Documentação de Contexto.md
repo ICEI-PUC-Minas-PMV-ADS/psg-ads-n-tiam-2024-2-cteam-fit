@@ -32,10 +32,9 @@ O objetivo principal deste projeto é desenvolver uma aplicação que ofereça a
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+Homens e mulheres, adultos jovens e de meia-idade, entre 20 e 50 anos. Pessoas que frequentam academias ou têm interesse em treinos personalizados. Pessoas com renda média que podem investir em serviços de personal trainer.Indivíduos preocupados com a saúde, bem-estar e condicionamento físico, seja por motivos de saúde, estética ou performance.
+Além disso, o personal trainer pode ter dois tipos de públicos: alunos particulares que o contratam diretamente e alunos vinculados a uma academia, o que pode influenciar no tipo de funcionalidade do aplicativo, como gestão de diferentes grupos de alunos.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
 
 > **Links Úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
