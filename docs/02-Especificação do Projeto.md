@@ -84,7 +84,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |------|-----------------------------------------|----|
 |RF-001| O sistema deve permitir a criação, leitura, atualização e exclusão (CRUD) de informações relevantes dos dados dos usuários, tais como cadastro e informações de login.| ALTA | 
 |RF-002| O sistema deve ser capaz de registrar os exercícios realizados pelos alunos, com carga, e repetições. E ao final da série, dar o exercício como concluído. | ALTA |
-|RF-003| A aplicação deve permitir a adição de lembretes para o usuario.  | ALTA |
+|RF-003| A aplicação deve permitir a adição de lembretes sobre horario de refeições para o usuario.  | ALTA |
 |RF-004| O sistema deverá permitir que o profissional cadastre os treinos de seus alunos na plataforma, mostrando a ficha para o aluno | MÉDIA |
 |RF-005| O sistema deve oferecer a funcionalidade de agendamento de sessões de treino, com notificações automáticas para lembrar os alunos. | ALTA |
 
@@ -94,7 +94,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |-------|-------------------------|----|
 |RNF-001| O sistema deve persistir os dados no banco de dados | ALTA | 
 |RNF-002| A aplicação, deve se manter em atividade, pelo menos, durante todo o período de horário comercial (5h - 23h59); | MÉDIA | 
-|RNF-003| O sistema deve ser capaz de suportar no mínimo 10 acessos simutaneos de usuários. | MÉDIA |
+|RNF-003| O sistema deve ser capaz de suportar no mínimo 10 acessos simultâneos de usuários. | MÉDIA |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
