@@ -87,6 +87,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-003| A aplicação deve permitir a adição de lembretes sobre horario de refeições para o usuario.  | ALTA |
 |RF-004| O sistema deverá permitir que o profissional cadastre os treinos de seus alunos na plataforma, mostrando a ficha para o aluno | MÉDIA |
 |RF-005| O sistema deve oferecer a funcionalidade de agendamento de sessões de treino, com notificações automáticas para lembrar os alunos. | ALTA |
+|RF-006| A aplicação deve garantir que apenas usuários cadastrados, e devidamente logados em suas contas tenham acesso a seus treinos e demais funcionalidades do sistema | MÉDIA |
+
 
 ### Requisitos não Funcionais
 
