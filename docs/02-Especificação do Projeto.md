@@ -85,7 +85,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-001| O sistema deve permitir a criação, leitura, atualização e exclusão (CRUD) de informações relevantes dos dados dos usuários, tais como cadastro e informações de login.| ALTA | 
 |RF-002| O sistema deve ser capaz de registrar os exercícios realizados pelos alunos, com carga, e repetições. E ao final da série, dar o exercício como concluído. | ALTA |
 |RF-003| A aplicação deve permitir a adição de lembretes sobre horario de refeições para o usuario.  | ALTA |
-|RF-004| O sistema deverá permitir que o profissional cadastre os treinos de seus alunos na plataforma, mostrando a ficha para o aluno | MÉDIA |
+|RF-004| O sistema deverá permitir que o profissional cadastre os treinos de seus alunos na plataforma, mostrando a ficha para o aluno | ALTA |
 |RF-005| O sistema deve oferecer a funcionalidade de agendamento de sessões de treino, com notificações automáticas para lembrar os alunos. | ALTA |
 |RF-006| A aplicação deve garantir que apenas usuários cadastrados, e devidamente logados em suas contas tenham acesso a seus treinos e demais funcionalidades do sistema | MÉDIA |
 
@@ -130,16 +130,35 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
+RF-001
+![casoDeUsoRF1](https://github.com/user-attachments/assets/b1256a17-9258-4f4d-af4f-2ac35ca8d817)
 
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
+RF-002
 
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+RF-003
+
+RF-004
+![casoDeUsoRF4](https://github.com/user-attachments/assets/34f7be0e-7e27-44a9-b271-842a50ffd9d7)
+
+RF-005
+
+RF-006
+
+RF-007
+
+RF-008
+
+RF-009
+
+RF-0010
+
+RF-0011
+
+RF-0012
+
+RF-0013
+
+RF-0014
 
 # Gerenciamento de Projeto
 
