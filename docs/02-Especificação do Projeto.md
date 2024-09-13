@@ -133,7 +133,8 @@ Enumere as restrições à sua solução. Lembre-se de que as restrições geral
 RF-001
 ![casoDeUsoRF1](https://github.com/user-attachments/assets/b1256a17-9258-4f4d-af4f-2ac35ca8d817)
 
-RF-002
+RF-002 & RF-006
+![casoDeUsoRF1e2](https://github.com/user-attachments/assets/11945739-b92f-4bbb-a8e9-83d58993cb48)
 
 RF-003
 
@@ -141,8 +142,6 @@ RF-004
 ![casoDeUsoRF4](https://github.com/user-attachments/assets/34f7be0e-7e27-44a9-b271-842a50ffd9d7)
 
 RF-005
-
-RF-006
 
 RF-007
 
