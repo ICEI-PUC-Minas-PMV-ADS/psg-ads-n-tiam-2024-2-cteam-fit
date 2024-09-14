@@ -90,6 +90,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-006| A aplicação deve garantir que apenas usuários cadastrados, e devidamente logados em suas contas tenham acesso a seus treinos e demais funcionalidades do sistema | MÉDIA |
 |RF-007| O sistema deverá permitir que o personal trainer anexe links com vídeos dos exercícios | MÉDIA |
 |RF-008| O sistema deve ter uma interface específica para o professor | MÉDIA |
+|RF-009| O sistema deve ter interface específica para o aluno. | ALTA |
+|RF-010| O sistema deve permitir que o usuário visualize um histórico detalhado de seus treinos anteriores, incluindo exercícios realizados, carga e repetições, e status de conclusão. | MEDIA |
 
 
 ### Requisitos não Funcionais
@@ -99,6 +101,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| O sistema deve persistir os dados no banco de dados | ALTA | 
 |RNF-002| A aplicação, deve se manter em atividade, pelo menos, durante todo o período de horário comercial (5h - 23h59) | MÉDIA | 
 |RNF-003| O sistema deve ser capaz de suportar no mínimo 10 acessos simultâneos de usuários | MÉDIA |
+|RNF-004| O aplicativo deve funcionar de forma consistente em dispositivos com diferentes tamanhos de tela e resoluções, garantindo uma experiência de usuário otimizada em diferentes smartphones. | ALTA |
 
 
 ### Regras de Negócio
