@@ -88,6 +88,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-004| O sistema deverá permitir que o profissional cadastre os treinos de seus alunos na plataforma, mostrando a ficha para o aluno | ALTA |
 |RF-005| O sistema deve oferecer a funcionalidade de agendamento de sessões de treino, com notificações automáticas para lembrar os alunos. | ALTA |
 |RF-006| A aplicação deve garantir que apenas usuários cadastrados, e devidamente logados em suas contas tenham acesso a seus treinos e demais funcionalidades do sistema | MÉDIA |
+|RF-007| O sistema deverá permitir que o personal trainer anexe links com vídeos dos exercícios | MÉDIA |
+|RF-008| O sistema deve ter uma interface específica para o professor | MÉDIA |
 
 
 ### Requisitos não Funcionais
@@ -95,8 +97,16 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RNF-001| O sistema deve persistir os dados no banco de dados | ALTA | 
-|RNF-002| A aplicação, deve se manter em atividade, pelo menos, durante todo o período de horário comercial (5h - 23h59); | MÉDIA | 
-|RNF-003| O sistema deve ser capaz de suportar no mínimo 10 acessos simultâneos de usuários. | MÉDIA |
+|RNF-002| A aplicação, deve se manter em atividade, pelo menos, durante todo o período de horário comercial (5h - 23h59) | MÉDIA | 
+|RNF-003| O sistema deve ser capaz de suportar no mínimo 10 acessos simultâneos de usuários | MÉDIA |
+
+
+### Regras de Negócio
+
+|ID     | Descrição do Requisito  |Prioridade |
+|-------|-------------------------|----|
+|RN-001| O sistema deve ser desenvolvido usando o banco de dados Firebase | ALTA | 
+
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
