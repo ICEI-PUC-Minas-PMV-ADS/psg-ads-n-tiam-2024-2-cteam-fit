@@ -150,6 +150,7 @@ RF-002 & RF-006
 ![casoDeUsoRF1e2](https://github.com/user-attachments/assets/11945739-b92f-4bbb-a8e9-83d58993cb48)
 
 RF-003
+![cteam lembrete (1)](https://github.com/user-attachments/assets/2c5220cc-ff4e-482c-9384-b678cee4d355)
 
 RF-004
 ![casoDeUsoRF4](https://github.com/user-attachments/assets/34f7be0e-7e27-44a9-b271-842a50ffd9d7)
