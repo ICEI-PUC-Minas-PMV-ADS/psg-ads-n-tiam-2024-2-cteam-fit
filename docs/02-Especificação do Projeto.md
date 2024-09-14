@@ -161,6 +161,7 @@ RF-007
 RF-008
 
 RF-009
+![casoDeUsoRF9](https://github.com/user-attachments/assets/2916973c-8ee8-49ea-a9f0-4549afc9cf95)
 
 RF-0010
 
