@@ -86,7 +86,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-002| O sistema deve ser capaz de registrar os exercícios realizados pelos alunos, com carga, e repetições. E ao final da série, dar o exercício como concluído. | ALTA |
 |RF-003| A aplicação deve permitir a adição de lembretes sobre horario de refeições para o usuario.  | ALTA |
 |RF-004| O sistema deverá permitir que o profissional cadastre os treinos de seus alunos na plataforma, mostrando a ficha para o aluno | ALTA |
-|RF-005| O sistema deve oferecer a funcionalidade de agendamento de sessões de treino, com notificações automáticas para lembrar os alunos. | ALTA |
+|RF-005| O sistema deve oferecer a funcionalidade de agendamento de sessões de treino. | ALTA |
 |RF-006| A aplicação deve garantir que apenas usuários cadastrados, e devidamente logados em suas contas tenham acesso a seus treinos e demais funcionalidades do sistema | MÉDIA |
 |RF-007| O sistema deverá permitir que o personal trainer anexe links com vídeos dos exercícios | MÉDIA |
 |RF-008| O sistema deve ter uma interface específica para o professor | MÉDIA |
@@ -156,6 +156,8 @@ RF-004
 ![casoDeUsoRF4](https://github.com/user-attachments/assets/34f7be0e-7e27-44a9-b271-842a50ffd9d7)
 
 RF-005
+![cteam lembrete](https://github.com/user-attachments/assets/ad63ad4b-9e65-4371-8d7f-1b5fadff62fe)
+
 ![Diagrama em branco (1)](https://github.com/user-attachments/assets/5fb8fa98-a543-4ef3-a552-39355809c6af)
 RF-007
 ![Diagrama em branco (2)](https://github.com/user-attachments/assets/fdeea3db-74fa-4aec-95e3-c6dc706bb1a2)
