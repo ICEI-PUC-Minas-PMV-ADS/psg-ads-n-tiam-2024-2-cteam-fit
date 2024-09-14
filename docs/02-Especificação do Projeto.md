@@ -142,9 +142,9 @@ RF-004
 ![casoDeUsoRF4](https://github.com/user-attachments/assets/34f7be0e-7e27-44a9-b271-842a50ffd9d7)
 
 RF-005
-
+![Diagrama em branco (1)](https://github.com/user-attachments/assets/5fb8fa98-a543-4ef3-a552-39355809c6af)
 RF-007
-
+![Diagrama em branco (2)](https://github.com/user-attachments/assets/fdeea3db-74fa-4aec-95e3-c6dc706bb1a2)
 RF-008
 
 RF-009
