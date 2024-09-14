@@ -160,8 +160,10 @@ RF-007
 ![Diagrama em branco (2)](https://github.com/user-attachments/assets/fdeea3db-74fa-4aec-95e3-c6dc706bb1a2)
 RF-008
 
+
 RF-009
-![casoDeUsoRF9](https://github.com/user-attachments/assets/2916973c-8ee8-49ea-a9f0-4549afc9cf95)
+![casoDeUsoRF09](https://github.com/user-attachments/assets/306043a7-8bac-48f0-bcb7-15b32c88830f)
+
 
 RF-0010
 ![casoDeUsoRF10](https://github.com/user-attachments/assets/513c1484-6f3c-4e96-9d9a-182a385c80c2)
