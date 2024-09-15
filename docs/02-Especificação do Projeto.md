@@ -115,6 +115,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
 |RN-001| O sistema deve ser desenvolvido usando o banco de dados Firebase | ALTA | 
+|RN-002| O sistema deve permitir que o personal trainer estabeleça limites de sessões de treino de acordo com o plano adquirido pelo aluno.| MEDIA | 
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
