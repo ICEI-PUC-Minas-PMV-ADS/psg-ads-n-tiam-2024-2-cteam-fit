@@ -92,6 +92,9 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-008| O sistema deve ter uma interface específica para o professor | MÉDIA |
 |RF-009| O sistema deve ter interface específica para o aluno. | ALTA |
 |RF-010| O sistema deve permitir que o usuário visualize um histórico detalhado de seus treinos anteriores, incluindo exercícios realizados, carga e repetições, e status de conclusão. | MEDIA |
+|RF-011| O sistema deve permitir ao personal trainer registrar e acompanhar avaliações físicas periódicas de cada aluno, como medidas corporais, peso e porcentagem de gordura. | MEDIA |
+|RF-012| A aplicação deve oferecer um controle de presença, permitindo que o personal trainer registre a frequência dos alunos nos treinos. | MEDIA |
+
 
 
 ### Requisitos não Funcionais
