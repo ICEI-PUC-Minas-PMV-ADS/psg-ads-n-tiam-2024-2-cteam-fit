@@ -10,17 +10,17 @@ Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo de
 
 ## Integrantes
 
-* Daniel Henrique Alves Bicalho Dias
 * Bernardo Silva Oliveira
+* Daniel Henrique Alves Bicalho Dias
+* Diogo Augusto Magalhães Marques
 * Gabriel Augusto Lana Vidal
 * Gustavo Meira Becattini
+* Hebert Tadeu de Castro Liberato
 * Pedro Henrique da Silva Araújo Queiroz
-* Hebert Tadeu
-* Diogo Augusto
 
 ## Orientador
 
-* Pedro
+* Pedro Felipe Alves de Oliveira
 
 ## Instruções de utilização
 
