@@ -1,6 +1,7 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+A relação entre personal trainers e seus alunos está passando por uma transformação significativa. A ausência de uma plataforma integrada que centralize a comunicação e o acompanhamento dos treinos afeta a eficiência do processo de ensino-aprendizagem, tanto para alunos particulares quanto para aqueles vinculados a academias. 
+Este projeto visa desenvolver uma solução digital que organize e automatize a criação, acompanhamento e ajustes de treinos, garantindo que cada aluno tenha acesso personalizado ao seu plano, bem como a monitorar seu progresso de forma centralizada.
 
 ## Problema
 A falta de uma plataforma integrada compromete a comunicação eficaz entre personal trainers e seus alunos, impactando negativamente o acompanhamento dos treinos e a satisfação dos alunos. 
