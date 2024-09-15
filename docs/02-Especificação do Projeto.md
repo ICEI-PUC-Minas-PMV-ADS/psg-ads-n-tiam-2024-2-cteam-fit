@@ -185,6 +185,7 @@ RF-0013
 ![Captura de tela 2024-09-15 143539](https://github.com/user-attachments/assets/fd28ba26-1134-42cc-b8f2-7eff6bdaef0d)
 
 RF-0014
+![Captura de tela 2024-09-15 145245](https://github.com/user-attachments/assets/cd87fbf9-aaf8-4e34-94fd-408fee87bdfa)
 
 # Gerenciamento de Projeto
 
