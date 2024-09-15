@@ -94,9 +94,8 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-010| O sistema deve permitir que o usuário visualize um histórico detalhado de seus treinos anteriores, incluindo exercícios realizados, carga e repetições, e status de conclusão. | MEDIA |
 |RF-011| O sistema deve permitir ao personal trainer registrar e acompanhar avaliações físicas periódicas de cada aluno, como medidas corporais, peso e porcentagem de gordura. | MEDIA |
 |RF-012| A aplicação deve oferecer um controle de presença, permitindo que o personal trainer registre a frequência dos alunos nos treinos. | MEDIA |
-|RF-013| O sistema deve permitir que os usuários recuperem ou redefinam suas senhas através de um e-mail cadastrado.
-Isso garante que os alunos e personal trainers possam acessar suas contas caso esqueçam a senha.| MEDIA |
-|RF-014| O sistema deve permitir que os alunos avaliem cada treino com uma nota simples (por exemplo, de 1 a 5 estrelas).| MEDIA |
+|RF-013| O sistema deve permitir que os usuários recuperem ou redefinam suas senhas através de um e-mail cadastrado. | MEDIA |
+|RF-014| O sistema deve permitir que os alunos avaliem cada treino com uma nota simples (por exemplo, de 1 a 5 estrelas). | MEDIA |
 
 
 
