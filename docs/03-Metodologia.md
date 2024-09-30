@@ -54,7 +54,7 @@ A equipe está organizada da seguinte forma:
 - Scrum Master: Bernardo;
 - Product Owner: Diogo;
 - Equipe de Desenvolvimento: Pedro Henrique, Gustavo Meira, Gabriel Lana, Hebert;
-- Equipe de Design: Daniel.
+- Equipe de Design: Daniel, Pedro Henrique.
 
 ### Processo
 
