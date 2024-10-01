@@ -17,12 +17,14 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de
 
 ## Modelo ER
 
-O Modelo ER representa através de um diagrama como as entidades (coisas, objetos) se relacionam entre si na aplicação interativa.]
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Modelo ER”.
-
-> - [Como fazer um diagrama entidade relacionamento | Lucidchart](https://www.lucidchart.com/pages/pt/como-fazer-um-diagrama-entidade-relacionamento)
-
+O Modelo Entidade-Relacionamento tem como função representar, através de um diagrama, as entidades (coisas, objetos) envolvidas no sistema e como elas se relacionam entre si. Mesmo em sistemas que utilizam bancos de dados não relacionais, como no caso do presente projeto, em que será utilizado o Firebase, o Modelo ER é essencial para uma visão clara e organizada da estrutura dos dados. Ele ajuda a identificar as entidades principais, como elas interagem e quais atributos são relevantes para cada uma.
+No contexto do nosso projeto, as entidades foram definidas com base nos requisitos do sistema e em sua funcionalidade. O diagrama ER fornece uma representação visual das entidades e seus relacionamentos, permitindo fácil compreensão do modelo de dados antes da implementação.
+Exemplo de entidades no sistema:
+    • Usuário: Representa o cliente, personal trainer ou administrador.
+        ◦ Atributos: Nome, E-mail, Data de Registro.
+    • Atividade física: Representa os exercícios efetuados.
+        ◦ Atributos: Nome, Categoria, Avaliação.
+        
 ## Esquema Relacional
 
 O Esquema Relacional corresponde à representação dos dados em tabelas juntamente com as restrições de integridade e chave primária.
