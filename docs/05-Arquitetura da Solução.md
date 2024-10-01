@@ -42,29 +42,29 @@ Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do ba
 
 ## Tecnologias Utilizadas
 
-# Firebase
+### Firebase
 O Firebase é uma plataforma de armazenamento em nuvem desenvolvida pela Google que oferece uma variedade de serviços para simplificar o desenvolvimento de aplicativos web e móveis. Como uma solução backend-as-a-service (BaaS), ele oferece recursos como autenticação, banco de dados em tempo real, notificações push, armazenamento de arquivos, hospedagem e muito mais. 
 
 Sua integração nativa com sistemas Android e ferramentas como o Android Studio facilita o torna uma opção extremante interessante para o desenvolvimento de aplicativos móveis.  
 
 Além disso, o Firebase é altamente escalável e oferece suporte a múltiplas plataformas, incluindo iOS, Web, e Unity. Ele é amplamente utilizado devido à sua integração simples com linguagens como JavaScript e frameworks como React e React Native.
 
-# Visual Studio Code
+### Visual Studio Code
 O Visual Studio Code (VS Code) é um editor de código-fonte leve e gratuito, desenvolvido pela Microsoft. Ele é amplamente utilizado por desenvolvedores para escrever, depurar e executar código em várias linguagens de programação, como JavaScript, Python, C#, HTML/CSS, e muito mais. 
 
 O VS Code oferece suporte a uma vasta gama de extensões, que podem ser instaladas para adicionar funcionalidades como controle de versão integrado com Git, depuração ao vivo, realce de sintaxe avançado, e integração com ferramentas como Docker e Kubernetes. Sua capacidade de personalização e suporte para desenvolvimento remoto o tornam a escolha ideal tanto para desenvolvedores frontend quanto backend. 
 
-# Expo Dev
+### Expo Dev
 O Expo Dev é uma plataforma e conjunto de ferramentas que permite o desenvolvimento rápido e eficiente de aplicativos móveis utilizando React Native. Ele fornece uma série de bibliotecas e APIs que facilitam a criação de aplicativos para iOS e Android com uma única base de código JavaScript. 
 
 Com o Expo, pode-se escrever e testar rapidamente aplicativos móveis sem a necessidade de configurar ambientes complexos para cada sistema operacional. Expo também oferece uma aplicação chamada Expo Go, que é uma plataforma sandbox que permite o desenvolvimento nativo em Android e iOS.
 
-# JavaScript
+### JavaScript
 O JavaScript é uma das linguagens de programação mais amplamente utilizadas no desenvolvimento web e móvel. Originalmente criado para adicionar interatividade a páginas web, o JavaScript evoluiu para ser uma linguagem de uso geral, suportada por navegadores, servidores, via Node.js, e até mesmo para o desenvolvimento de aplicativos móveis com frameworks como React Native e Expo. 
 
 Sua flexibilidade, facilidade de aprendizado e imensa comunidade de desenvolvedores o tornam a escolha ideal para construir interfaces de usuário dinâmicas, manipular dados e criar aplicativos em tempo real.
 
-# React Native
+### React Native
 O React Native é um framework de código aberto desenvolvido pelo Facebook que permite criar aplicativos móveis nativos para iOS e Android usando JavaScript e React. Ele oferece uma maneira eficiente de reutilizar o código entre as plataformas, mantendo o desempenho e a aparência nativos dos aplicativos. 
 
 Uma das principais vantagens do React Native é que ele se integra perfeitamente com ferramentas como o Expo Dev, que simplifica ainda mais o desenvolvimento de aplicativos móveis, e com serviços backend como o Firebase, facilitando a implementação de funcionalidades complexas, como autenticação e sincronização de dados em tempo real. 
