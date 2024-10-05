@@ -39,7 +39,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ## Modelo Não Relacional de Dados
 
-O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto não serão feitos os modelos ER e Relacional. No entanto, seguem os arquivos JSON baseados no armazenamento de dados que faremos:
+O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto não serão feitos os modelos ER e Relacional. No entanto, seguem exemplos de como organizaremos nossos arquivos JSON baseados no armazenamento de dados que faremos:
 
 ```yaml
 {
