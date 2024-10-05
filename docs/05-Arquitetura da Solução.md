@@ -78,7 +78,7 @@ O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto 
 }
 }
 
-
+```
 
 ## Padronização de Qualidade do Produto
 
