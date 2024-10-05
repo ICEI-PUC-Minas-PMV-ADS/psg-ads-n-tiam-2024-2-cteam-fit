@@ -41,7 +41,10 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto não serão feitos os modelos ER e Relacional. No entanto, seguem os arquivos JSON baseados no armazenamento de dados que faremos:
 
-[Uploading cteam{
+```yaml
+{
+
+{
   "Exercicios": {
     "id_exercicio_1": {
       "carga": 90,
@@ -72,7 +75,8 @@ O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto 
       "role": ""
     }
   }
-}-fit-default-rtdb-Cteam-export.json…]()
+}
+}
 
 
 
