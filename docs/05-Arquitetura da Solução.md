@@ -1,4 +1,4 @@
-# Arquitetura da Solução
+[cteam-fit-default-rtdb-Cteam-export.json](https://github.com/user-attachments/files/17267168/cteam-fit-default-rtdb-Cteam-export.json)# Arquitetura da Solução
 
 ## Requisitos e Restrições
 
@@ -41,7 +41,39 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto não serão feitos os modelos ER e Relacional. No entanto, seguem os arquivos JSON baseados no armazenamento de dados que faremos:
 
-INSERIR JSON AQUI!!!!!!!
+[Uploading cteam{
+  "Exercicios": {
+    "id_exercicio_1": {
+      "carga": 90,
+      "grupo_muscular": "pernas",
+      "link_video": "",
+      "nome": "Leg Press 45",
+      "repeticoes": 12,
+      "serie": 3
+    }
+  },
+  "Fichas": {
+    "id_ficha_1": {
+      "data_criacao": "2024-10-02",
+      "id_ficha": 32154,
+      "matricula_usuario": 1234,
+      "status": "ativa",
+      "validade": "2024-11-02"
+    }
+  },
+  "Usuarios": {
+    "id_usuario_1": {
+      "data_nasc": "",
+      "email": "",
+      "fichas": "Fichas",
+      "matricula": 1234,
+      "nome": "",
+      "objetivo": "",
+      "role": ""
+    }
+  }
+}-fit-default-rtdb-Cteam-export.json…]()
+
 
 
 ## Padronização de Qualidade do Produto
