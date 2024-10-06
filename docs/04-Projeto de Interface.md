@@ -26,16 +26,44 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 
 São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
 
+### Telas de Login e Cadastro
 ![loginEcadastro](https://github.com/user-attachments/assets/e884ce07-90bc-440e-b5de-f1964ce73942)
+
+### Telas de treinos e registro de exercício
 ![telasDeTreinos](https://github.com/user-attachments/assets/ed71867c-a9b0-4f26-8451-4bc0f5013906)
+
+### Histórico de Treinos
 ![treinoFinalizado&ResumoDoHistoricoDeTreinos](https://github.com/user-attachments/assets/19667ce9-269e-4105-a202-b44fcf2bc70f)
+
+### Detalhes do treino
 ![historicoDeTreinoEspecifico](https://github.com/user-attachments/assets/0007bed2-ff77-4bd6-9c97-73056c633861)
+
+### Perfil do aluno
 ![perfilDoAluno](https://github.com/user-attachments/assets/7ea99746-4f35-4dc9-a85f-2aeaa15c00fe)
+
+### Tela inicial do Personal Trainer
 ![inicialPersonal](https://github.com/user-attachments/assets/353845b7-c84e-4cba-af3c-d6b9bc8c5eb8)
+
+### Tela de gerenciamento de aluno
 ![gerenciamentoDeAluno](https://github.com/user-attachments/assets/dc396626-45df-4960-b4cc-38ceee7b7980)
+
+### Tela para visualização e edição de treinos e exercícios
 ![visualizacao&EdicaoDeTreinosIndividuais](https://github.com/user-attachments/assets/e2633ce3-1cb8-4315-b0e0-96ca75960d87)
+
+### Tela para controle de frequência de aluno
 ![controleFrequenciaAluno](https://github.com/user-attachments/assets/6b45927c-d690-49fc-b9bf-13b9dbcb72cd)
+
+### Tela de Avaliação física (visão do personal)
 ![avaliacaoFisicaAlunoVisaoPersonal](https://github.com/user-attachments/assets/88cca253-b035-4019-a18c-5d7e48f095d5)
+
+### Agenda para sessões idividuais
+As duas últimas fotos representam estados de disponibilidade e indisponibilidade, respectivemente.<br><br>
+![AgendaParaSessoesIndividuais](https://github.com/user-attachments/assets/a148fdcd-8955-493a-835c-ff95674ac44a)
+![ConfirmacaoParaAgendamentoDeSessaoIndividual](https://github.com/user-attachments/assets/8b6efbc3-19e5-4502-8370-e709b3dc4973)
+![IndisponiobilidadeParaAgendamentoDeSessaoIndividual](https://github.com/user-attachments/assets/41eb0a7c-581d-4d22-a263-f5c99a3c69a8)
+
+### Tela de Cadastro de Exercícios
+![cadastroDeExercicios](https://github.com/user-attachments/assets/6bf10857-fbfc-4694-b0c4-7983a8f0313d)
 
  
 > **Links Úteis**:
