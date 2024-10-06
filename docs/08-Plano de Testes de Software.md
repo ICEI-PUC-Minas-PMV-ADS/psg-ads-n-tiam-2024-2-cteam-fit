@@ -2,8 +2,6 @@
 
 <span style="color:red">Pré-requisitos: <a href="2-Especificação do Projeto.md"> Especificação do Projeto</a></span>, <a href="3-Projeto de Interface.md"> Projeto de Interface</a>
 
-# Casos de Teste do Aplicativo Mobile de Academia
-
 ## Caso de Teste 1: CRUD de Usuários
 1. **Requisito associado**: RF-001
 2. **Objetivo do teste**: Verificar se o sistema permite a criação, leitura, atualização e exclusão de informações dos usuários.
