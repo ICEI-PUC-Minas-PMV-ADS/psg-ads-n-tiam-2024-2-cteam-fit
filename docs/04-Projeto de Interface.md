@@ -25,6 +25,18 @@ As referências abaixo irão auxiliá-lo na geração do artefato “Diagramas d
 ![Exemplo de Wireframe](img/Diagrama Cteam.drawio.png)
 
 São protótipos usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante do layout de elementos fundamentais na interface.
+
+![loginEcadastro](https://github.com/user-attachments/assets/e884ce07-90bc-440e-b5de-f1964ce73942)
+![telasDeTreinos](https://github.com/user-attachments/assets/ed71867c-a9b0-4f26-8451-4bc0f5013906)
+![treinoFinalizado&ResumoDoHistoricoDeTreinos](https://github.com/user-attachments/assets/19667ce9-269e-4105-a202-b44fcf2bc70f)
+![historicoDeTreinoEspecifico](https://github.com/user-attachments/assets/0007bed2-ff77-4bd6-9c97-73056c633861)
+![perfilDoAluno](https://github.com/user-attachments/assets/7ea99746-4f35-4dc9-a85f-2aeaa15c00fe)
+![inicialPersonal](https://github.com/user-attachments/assets/353845b7-c84e-4cba-af3c-d6b9bc8c5eb8)
+![gerenciamentoDeAluno](https://github.com/user-attachments/assets/dc396626-45df-4960-b4cc-38ceee7b7980)
+![visualizacao&EdicaoDeTreinosIndividuais](https://github.com/user-attachments/assets/e2633ce3-1cb8-4315-b0e0-96ca75960d87)
+![controleFrequenciaAluno](https://github.com/user-attachments/assets/6b45927c-d690-49fc-b9bf-13b9dbcb72cd)
+![avaliacaoFisicaAlunoVisaoPersonal](https://github.com/user-attachments/assets/88cca253-b035-4019-a18c-5d7e48f095d5)
+
  
 > **Links Úteis**:
 > - [Protótipos vs Wireframes](https://www.nngroup.com/videos/prototypes-vs-wireframes-ux-projects/)
