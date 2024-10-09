@@ -34,20 +34,27 @@
    
 **Observações:**
 
-• Cenário 1: Wilker conseguiu realizar a tarefa rapidamente.
+• Cenário 1: Wilker conseguiu realizar a tarefa rapidamente. 
+
 • Cenário 2: Cristina conseguiu acessar o registro de exercícios rapidamente.
+
 • Cenário 3: Wilker não conseguiu adicionar lembretes. 
+
 • Cenário 4: Wilker achou um pouco confuso ter que cadastrar um exercício e 
 depois adicioná-lo ao treino do aluno, mas depois que aprendeu gostou do 
 método. 
+
 • Cenário 5: Wilker conseguiu agendar sessões rapidamente.
+
 • Cenário 6: Cristina conseguiu acessar o historio de treino rapidamente.
+
 • Cenário 7: Cristina não achou a opção de avaliar um treino.
 
 **Comentários do Participante:**
 
 • "Gosto de rumo que o projeto está levando, porém acho que preciso de uma ajuda 
 para entender todos os funcionamentos." -Wilker 
+
 • "Como alguém leiga em tecnologia, achei um aplicativo confuso à primeira vista, 
 mas depois se acostuma." -Cristina
 
