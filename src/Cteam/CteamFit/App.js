@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, Button, Alert} from 'react-native';
+import TextField from './Components/textField'
 
-export default function App() {
+
+function App() {
+
+  const [email, setEmail] = useState('')
+  const [senha, setSenha] = useState('')
+
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    
+    <View>
+      <Text>Login</Text>
+      <TextField 
+        label="Email" 
+        placeholder="email@example.com"
+        value={email}
+        atUpdate={value => setEmail(value)}
+        />
+      <TextField 
+        label="Senha" 
+        placeholder="senha"
+        value={senha}
+        atUpdate={value => setSenha(value)}
+      />
+      <Button 
+          title="Login" 
+        />
+        <Text>Email: {email}</Text>
+        
     </View>
-  );
+  )
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
