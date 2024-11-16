@@ -1,38 +1,22 @@
-import React, { useState } from 'react';
-import { StyleSheet, Text, View, Button, Alert} from 'react-native';
-import TextField from './Components/textField'
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import Login from './pages/Login';
+import Cadastro from './pages/Cadastro';
+import Treinos from './pages/Treinos';
 
+const Stack = createStackNavigator();
 
-function App() {
-
-  const [email, setEmail] = useState('')
-  const [senha, setSenha] = useState('')
-
-
-
+const App = () => {
   return (
-    
-    <View>
-      <Text>Login</Text>
-      <TextField 
-        label="Email" 
-        placeholder="email@example.com"
-        value={email}
-        atUpdate={value => setEmail(value)}
-        />
-      <TextField 
-        label="Senha" 
-        placeholder="senha"
-        value={senha}
-        atUpdate={value => setSenha(value)}
-      />
-      <Button 
-          title="Login" 
-        />
-        <Text>Email: {email}</Text>
-        
-    </View>
-  )
-}
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Treinos">
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="Treinos" component={Treinos} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+};
 
 export default App;
