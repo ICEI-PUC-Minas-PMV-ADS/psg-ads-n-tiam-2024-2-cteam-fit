@@ -1,8 +1,11 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { IconButton, Card, Button } from 'react-native-paper';
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 import { useNavigation } from '@react-navigation/native';
+
+const [treinos, setTreinos] = React.useState([]);
 
 const Treinos = () => {
     const navigation = useNavigation();
@@ -12,6 +15,36 @@ const Treinos = () => {
     { id: '3', nome: 'Treino C', descricao: 'Pernas' },
     { id: '4', nome: 'Treino D', descricao: 'Ombros - Abdominal' },
   ];
+
+  const addTreino = async (nome, descricao) => {
+    try {
+      await addDoc(collection(db, "treinos"), {
+        nome,
+        descricao,
+      });
+      alert("Treino adicionado com sucesso!");
+      fetchTreinos(); // Recarrega os treinos
+    } catch (error) {
+      alert("Erro ao adicionar treino: " + error.message);
+    }
+  };
+
+  const fetchTreinos = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "treinos"));
+      const treinoList = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setTreinos(treinoList);
+    } catch (error) {
+      alert("Erro ao buscar treinos: " + error.message);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchTreinos();
+  }, []);
 
   const iniciarTreino = (nome) => {
     alert(`Iniciando ${nome}...`);

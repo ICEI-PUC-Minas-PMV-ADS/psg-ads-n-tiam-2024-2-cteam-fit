@@ -2,6 +2,12 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getFirestore, doc, setDoc } from "firebase/firestore";
+//import { app } from '.../firebaseConfig';
+
+const auth = getAuth(app);
+const db = getFirestore(app);
 
 const Cadastro = () => {
   const navigation = useNavigation();
@@ -10,9 +16,29 @@ const Cadastro = () => {
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
 
-  const register = () => {
-    // Lógica de registro (a ser implementada)
-    navigation.navigate('Treinos'); // Redireciona para a página de treinos
+  const register = async () => {
+    if (!name || !email || !password || !confirmPassword) {
+      alert("Todos os campos devem ser preenchidos.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("A senha deve ser a mesma");
+      return;
+    }
+    try {
+
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      await setDoc(doc(db, "users", user.uid), {
+        name: name,
+        email: user.email,
+      });
+      alert("Usuário cadastrado com sucesso!");
+      navigation.navigate("Login");
+    } catch (error) {
+      alert(`Erro ao cadastrar: ${error.message}`);
+    }
   };
 
   return (

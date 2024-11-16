@@ -2,14 +2,23 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 
 const Login = () => {
   const navigation = useNavigation();
   const [userMail, setUserMail] = React.useState("");
   const [userPassword, setUserPassword] = React.useState("");
+  const auth = getAuth(app);
 
-  const login = () => {
-    navigation.navigate('Treinos'); // Redireciona para a página de treinos
+  const login = async () => {
+    try {
+      const userCredential = await signInWithEmailAndPassword(auth, userMail, userPassword);
+      const user = userCredential.user;
+      alert("Login realizado com sucesso!");
+      navigation.navigate("Treinos");
+    } catch (error) {
+      alert(`Erro ao fazer login: ${error.message}`);
+    }
   };
 
   return (
