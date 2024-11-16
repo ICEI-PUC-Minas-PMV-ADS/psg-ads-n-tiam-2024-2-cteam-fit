@@ -13,6 +13,8 @@ const Treinos = () => {
     { id: '4', nome: 'Treino D', descricao: 'Ombros - Abdominal' },
   ];
 
+  navigation.navigate('Execucao', { exercicios });
+
   const iniciarTreino = (nome) => {
     alert(`Iniciando ${nome}...`);
   };

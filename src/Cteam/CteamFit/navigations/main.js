@@ -1,7 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import Treinos from './pages/Treinos';
+import Treinos from './pages/Execucao';
 
 const Stack = createNativeStackNavigator();
 
