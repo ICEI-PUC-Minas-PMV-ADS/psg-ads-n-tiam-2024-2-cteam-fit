@@ -2,12 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
-import { getFirestore, doc, setDoc } from "firebase/firestore";
-//import { app } from '.../firebaseConfig';
-
-const auth = getAuth(app);
-const db = getFirestore(app);
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from '../firebaseConfig.js';
 
 const Cadastro = () => {
   const navigation = useNavigation();
