@@ -14,9 +14,11 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, userMail, userPassword);
       const user = userCredential.user;
+      console.log(user);
       alert("Login realizado com sucesso!");
       navigation.navigate("Treinos");
     } catch (error) {
+      console.error("Error signing in: ", error);
       alert(`Erro ao fazer login: ${error.message}`);
     }
   };

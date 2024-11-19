@@ -23,17 +23,19 @@ const Cadastro = () => {
       return;
     }
     try {
-
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      await setDoc(doc(db, "users", user.uid), {
+      await setDoc(doc(db, "usuarios", user.uid),
+   {
         name: name,
         email: user.email,
       });
+
       alert("Usuário cadastrado com sucesso!");
       navigation.navigate("Login");
     } catch (error) {
+      console.error("Erro ao subir documento ao banco: ", error);
       alert(`Erro ao cadastrar: ${error.message}`);
     }
   };
