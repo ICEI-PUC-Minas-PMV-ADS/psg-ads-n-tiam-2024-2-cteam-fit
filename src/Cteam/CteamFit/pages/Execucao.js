@@ -35,13 +35,37 @@ const Execucao = ({ route, navigation }) => {
               setCargas(['', '', '']);
             } else {
               Alert.alert('Treino Concluído', 'Parabéns, você concluiu todos os exercícios!');
+              registrarPresenca(); // Chama a função para registrar a presença
               navigation.navigate('Treinos'); // Voltar à tela de treinos
             }
           },
         },
+        
       ]
     );
   };
+
+  
+  const registrarPresenca = () => {
+    const userId = 'alunoId'; // id do aluno
+    const dataTreino = new Date().toISOString(); // data
+  
+    // mexer no firebase
+    db.collection('presencas').add({
+      userId: userId,
+      dataTreino: dataTreino,
+      exercicio: exercicioAtual.nome, 
+      status: 'concluido',
+    })
+    .then(() => {
+      Alert.alert('Parabéns', 'Mais um dia de treino.');
+    })
+    .catch((error) => {
+      console.error('Erro ao registrar presença: ', error);
+      Alert.alert('Erro', 'Ocorreu um erro ao registrar sua presença.');
+    });
+  };
+  
 
   const exercicioAtual = exercicios[currentIndex];
 
