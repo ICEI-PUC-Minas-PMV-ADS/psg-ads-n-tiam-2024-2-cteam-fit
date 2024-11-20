@@ -2,43 +2,46 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from '../firebaseConfig.js';
+import { firebase } from '../../firebase/config'
 
-const Cadastro = () => {
+export default function Cadastro({navigation}) {
   const navigation = useNavigation();
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [confirmPassword, setConfirmPassword] = React.useState("");
 
-  const register = async () => {
-    if (!name || !email || !password || !confirmPassword) {
-      alert("Todos os campos devem ser preenchidos.");
-      return;
-    }
+  const register = () => {
     if (password !== confirmPassword) {
-      alert("A senha deve ser a mesma");
-      return;
+      alert("As senhas não são iguais.")
+      return
     }
-    try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-      const user = userCredential.user;
-
-      await setDoc(doc(db, "usuarios", user.uid),
-   {
-        name: name,
-        email: user.email,
-      });
-
-      alert("Usuário cadastrado com sucesso!");
-      navigation.navigate("Login");
-    } catch (error) {
-      console.error("Erro ao subir documento ao banco: ", error);
-      alert("Erro ao cadastrar: ", {error});
-    }
-  };
+    firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then((response) => {
+            const uid = response.user.uid
+            const data = {
+                id: uid,
+                email,
+                fullName,
+            };
+            const usersRef = firebase.firestore().collection('users')
+            usersRef
+                .doc(uid)
+                .set(data)
+                .then(() => {
+                    navigation.navigate('Treinos', {user: data})
+                })
+                .catch((error) => {
+                    alert(error)
+                });
+        })
+        .catch((error) => {
+            alert(error)
+    });
+    navigation.navigate('Treinos'); // Redireciona para a página de treinos
+  };
 
   return (
     <View style={styles.container}>
@@ -82,7 +85,7 @@ const Cadastro = () => {
       <Button
         mode="contained"
         style={styles.button}
-        onPress={register}
+        onPress = {() => register()}
       >
         Cadastrar
       </Button>
@@ -126,4 +129,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Cadastro;
