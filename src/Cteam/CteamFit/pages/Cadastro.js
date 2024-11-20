@@ -2,9 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
-import { firebase } from '../../firebase/config'
+import { firebase } from '../../CteamFit/Database/firebaseConfig'
 
-export default function Cadastro({navigation}) {
+export default function Cadastro({}) {
   const navigation = useNavigation();
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");

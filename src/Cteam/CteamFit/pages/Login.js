@@ -4,7 +4,7 @@ import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from '../firebaseConfig.js';
+import { auth, db } from '../Database/firebaseConfig.js';
 
 const Cadastro = () => {
   const navigation = useNavigation();
