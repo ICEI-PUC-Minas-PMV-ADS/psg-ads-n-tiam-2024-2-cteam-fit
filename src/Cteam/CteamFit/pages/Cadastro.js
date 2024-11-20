@@ -2,8 +2,9 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
+import { firebase } from '../../firebase/config'
 
-const Cadastro = () => {
+export default function Cadastro({navigation}) {
   const navigation = useNavigation();
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
@@ -11,7 +12,34 @@ const Cadastro = () => {
   const [confirmPassword, setConfirmPassword] = React.useState("");
 
   const register = () => {
-    // Lógica de registro (a ser implementada)
+    if (password !== confirmPassword) {
+      alert("As senhas não são iguais.")
+      return
+    }
+    firebase
+        .auth()
+        .createUserWithEmailAndPassword(email, password)
+        .then((response) => {
+            const uid = response.user.uid
+            const data = {
+                id: uid,
+                email,
+                fullName,
+            };
+            const usersRef = firebase.firestore().collection('users')
+            usersRef
+                .doc(uid)
+                .set(data)
+                .then(() => {
+                    navigation.navigate('Treinos', {user: data})
+                })
+                .catch((error) => {
+                    alert(error)
+                });
+        })
+        .catch((error) => {
+            alert(error)
+    });
     navigation.navigate('Treinos'); // Redireciona para a página de treinos
   };
 
@@ -57,7 +85,7 @@ const Cadastro = () => {
       <Button
         mode="contained"
         style={styles.button}
-        onPress={register}
+        onPress = {() => register()}
       >
         Cadastrar
       </Button>
@@ -101,4 +129,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Cadastro;

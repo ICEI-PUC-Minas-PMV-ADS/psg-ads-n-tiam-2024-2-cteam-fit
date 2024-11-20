@@ -1,11 +1,14 @@
 import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from 'react-native';
 import { IconButton, Card, Button } from 'react-native-paper';
+import { collection, getDocs, addDoc } from "firebase/firestore";
 
 import { useNavigation } from '@react-navigation/native';
 
+
 const Treinos = () => {
-    const navigation = useNavigation();
+  const [setTreinos] = React.useState([]);
+  const navigation = useNavigation();
   const treinos = [
     { id: '1', nome: 'Treino A', descricao: 'Peito - Tríceps' },
     { id: '2', nome: 'Treino B', descricao: 'Costas - Bíceps - Abdômen' },
@@ -13,7 +16,37 @@ const Treinos = () => {
     { id: '4', nome: 'Treino D', descricao: 'Ombros - Abdominal' },
   ];
 
-  navigation.navigate('Execucao', { exercicios });
+  const fetchTreinos = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "treinos"));
+      const treinoList = querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      setTreinos(treinoList);
+    } catch (error) {
+      console.error("Erro ao subir documento ao banco: ", error);
+      alert("Erro ao buscar treinos: " + error.message);
+    }
+  };
+
+  const addTreino = async (nome, descricao) => {
+    try {
+      await addDoc(collection(db, "fichas"), {
+        nome,
+        descricao,
+      });
+      alert("Treino adicionado com sucesso!");
+      fetchTreinos();
+    } catch (error) {
+      console.error("Erro ao subir documento ao banco: ", error);
+      alert("Erro ao adicionar treino: " + error.message);
+    }
+  };
+
+  React.useEffect(() => {
+    fetchTreinos();
+  }, []);
 
   const iniciarTreino = (nome) => {
     alert(`Iniciando ${nome}...`);

@@ -2,52 +2,93 @@ import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db } from '../firebaseConfig.js';
 
-const Login = () => {
+const Cadastro = () => {
   const navigation = useNavigation();
-  const [userMail, setUserMail] = React.useState("");
-  const [userPassword, setUserPassword] = React.useState("");
+  const [name, setName] = React.useState("");
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [confirmPassword, setConfirmPassword] = React.useState("");
 
-  const login = () => {
-    navigation.navigate('Treinos'); // Redireciona para a página de treinos
-  };
+  const register = async () => {
+    if (!name || !email || !password || !confirmPassword) {
+      alert("Todos os campos devem ser preenchidos.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("A senha deve ser a mesma");
+      return;
+    }
+    try {
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+
+      await setDoc(doc(db, "usuarios", user.uid),
+   {
+        name: name,
+        email: user.email,
+      });
+
+      alert("Usuário cadastrado com sucesso!");
+      navigation.navigate("Login");
+    } catch (error) {
+      console.error("Erro ao subir documento ao banco: ", error);
+      alert("Erro ao cadastrar: ", {error});
+    }
+  };
 
   return (
     <View style={styles.container}>
       <Text style={styles.logo}>cteam-fit</Text>
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Cadastro</Text>
+
+      <TextInput
+        style={styles.input}
+        mode="outlined"
+        label="Nome"
+        value={name}
+        onChangeText={(text) => setName(text)}
+      />
 
       <TextInput
         style={styles.input}
         mode="outlined"
         label="e-mail"
-        value={userMail}
-        onChangeText={(text) => setUserMail(text)}
+        value={email}
+        onChangeText={(text) => setEmail(text)}
       />
 
       <TextInput
         style={styles.input}
         mode="outlined"
-        label="senha"
+        label="Crie uma senha"
         secureTextEntry
-        value={userPassword}
-        onChangeText={(text) => setUserPassword(text)}
+        value={password}
+        onChangeText={(text) => setPassword(text)}
+      />
+
+      <TextInput
+        style={styles.input}
+        mode="outlined"
+        label="Confirme a senha"
+        secureTextEntry
+        value={confirmPassword}
+        onChangeText={(text) => setConfirmPassword(text)}
       />
 
       <Button
         mode="contained"
         style={styles.button}
-        onPress={login}
+        onPress={register}
       >
-        Entrar
+        Cadastrar
       </Button>
 
-      <TouchableOpacity onPress={() => alert("Recuperação de senha ainda não implementada.")}>
-        <Text style={styles.link}>Esqueceu sua senha?</Text>
-      </TouchableOpacity>
-
-      <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
-        <Text style={styles.link}>Não possui conta? Cadastre-se</Text>
+      <TouchableOpacity onPress={() => navigation.navigate('Login')}>
+        <Text style={styles.link}>Já possui conta? Faça o Login</Text>
       </TouchableOpacity>
     </View>
   );
@@ -85,4 +126,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Login;
+export default Cadastro;
