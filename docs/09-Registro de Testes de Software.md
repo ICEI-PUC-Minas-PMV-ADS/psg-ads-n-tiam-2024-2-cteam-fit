@@ -19,3 +19,10 @@ Cadastro de um usuário:<br>
 Imagem da lista atualizada de usuários:<br>
 ![Imagem de lista de usuários cadastrados](https://github.com/user-attachments/assets/2b46e599-e28d-4694-95c3-de0c150adfbb)
 
+<br><br>
+Login de usuário:<br>
+![Imagem do WhatsApp de 2024-11-19 à(s) 22 22 46_2b8082c8](https://github.com/user-attachments/assets/17b84f49-0352-440d-847a-6f59dec0b7d3)
+<br><br>
+Usuário logado redirecionado para página de treinos (Home):<br>
+![Imagem do WhatsApp de 2024-11-19 à(s) 22 26 08_19c8c673](https://github.com/user-attachments/assets/48919b1b-3fff-4660-98e7-d11bc2e7e4ac)
+
