@@ -10,3 +10,12 @@ Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identi
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+
+## CT-1
+CRUD de usuários:
+Cadastro de um usuário:<br>
+![Imagem do cadastro](https://github.com/user-attachments/assets/0bff1174-af2a-48a5-9932-d98629bc5db2)
+<br><br>
+Imagem da lista atualizada de usuários:<br>
+![Imagem de lista de usuários cadastrados](https://github.com/user-attachments/assets/2b46e599-e28d-4694-95c3-de0c150adfbb)
+
