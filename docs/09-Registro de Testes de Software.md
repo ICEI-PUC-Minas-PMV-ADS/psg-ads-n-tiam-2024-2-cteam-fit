@@ -10,3 +10,19 @@ Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identi
 
 > **Links Úteis**:
 > - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+
+## CT-1
+CRUD de usuários:
+Cadastro de um usuário:<br>
+![Imagem do cadastro](https://github.com/user-attachments/assets/0bff1174-af2a-48a5-9932-d98629bc5db2)
+<br><br>
+Imagem da lista atualizada de usuários:<br>
+![Imagem de lista de usuários cadastrados](https://github.com/user-attachments/assets/2b46e599-e28d-4694-95c3-de0c150adfbb)
+
+<br><br>
+Login de usuário:<br>
+![Imagem do WhatsApp de 2024-11-19 à(s) 22 22 46_2b8082c8](https://github.com/user-attachments/assets/17b84f49-0352-440d-847a-6f59dec0b7d3)
+<br><br>
+Usuário logado redirecionado para página de treinos (Home):<br>
+![Imagem do WhatsApp de 2024-11-19 à(s) 22 26 08_19c8c673](https://github.com/user-attachments/assets/48919b1b-3fff-4660-98e7-d11bc2e7e4ac)
+
