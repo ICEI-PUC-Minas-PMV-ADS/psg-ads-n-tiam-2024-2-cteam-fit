@@ -1,0 +1,15 @@
+{
+  "name": "react-navigation",
+  "version": "5.0.0",
+  "description": "Routing and navigation for your React Native apps",
+  "main": "index.js",
+  "repository": {
+    "url": "git+ssh://git@github.com/react-navigation/react-navigation.git",
+    "type": "git"
+  },
+  "author": "Adam Miskiewicz <adam@sk3vy.com>, Eric Vicenti <ericvicenti@gmail.com>, Brent Vatne <brent@expo.io>, Satyajit Sahoo <satyajit.happy@gmail.com>",
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ]
+}
