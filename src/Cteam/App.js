@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Aluno from './pages/Aluno';
-import Historico from './pages/Historico'; 
+import Historico from './pages/Historico';
 
 const Stack = createStackNavigator();
 
@@ -56,3 +56,16 @@ function App() {
 }
 
 export default App;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#f5f5f5',
+  },
+  texto: {
+    fontSize: 18,
+    color: '#333',
+  },
+});

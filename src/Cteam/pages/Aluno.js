@@ -1,52 +1,138 @@
-import React, { useState } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Modal, Button, ScrollView } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, Text, StyleSheet, FlatList, TouchableOpacity, Modal, Button, ScrollView, Image } from 'react-native';
+import { db } from './firebaseConfig';
+import { get, ref } from "firebase/database";
 
-// Dados fictícios para a lista de treinos
-const treinos = [
-  { id: '1', nome: 'Treino A', descricao: 'Peito - Tríceps' },
-  { id: '2', nome: 'Treino B', descricao: 'Costas - Bíceps - Abdômen' },
-  { id: '3', nome: 'Treino C', descricao: 'Pernas' },
-  { id: '4', nome: 'Treino D', descricao: 'Ombros - Abdominal' },
-];
+// Função para obter os exercícios
+const fetchExercicios = async () => {
+  const exerciciosRef = ref(db, 'exercicios');
+  try {
+    const snapshot = await get(exerciciosRef);
+    if (snapshot.exists()) {
+      return snapshot.val();
+    }
+  } catch (error) {
+    console.error("Erro ao obter os exercícios: ", error);
+  }
+  return {};
+};
+
+// Função para obter os treinos do aluno
+const fetchTreinosDoAluno = async (userId) => {
+  const treinosRef = ref(db, 'treinos');
+  try {
+    const snapshot = await get(treinosRef);
+    if (snapshot.exists()) {
+      const treinosData = snapshot.val();
+      const treinosDoAluno = [];
+
+      // Filtra os treinos relacionados ao aluno
+      Object.keys(treinosData).forEach((treinoId) => {
+        const treino = treinosData[treinoId];
+        if (treino.alunoId === userId) {
+          treinosDoAluno.push(treino);
+        }
+      });
+
+      return treinosDoAluno;
+    }
+  } catch (error) {
+    console.error("Erro ao obter os treinos: ", error);
+  }
+  return [];
+};
 
 // Tela de Lista de Treinos
-const TelaListaTreinos = ({ onSelecionarTreino }) => (
-  <View style={styles.container}>
-    <Text style={styles.titulo}>Meus Treinos</Text>
-    <FlatList
-      data={treinos}
-      keyExtractor={(item) => item.id}
-      renderItem={({ item }) => (
-        <View style={styles.cartaoTreino}>
-          <Text style={styles.nomeTreino}>{item.nome}</Text>
-          <Text style={styles.descricaoTreino}>{item.descricao}</Text>
-          <TouchableOpacity style={styles.botaoIniciar} onPress={() => onSelecionarTreino(item)}>
-            <Text style={styles.textoBotao}>INICIAR TREINO</Text>
-          </TouchableOpacity>
-        </View>
-      )}
-    />
-  </View>
-);
+const TelaListaTreinos = ({ onSelecionarTreino }) => {
+  const [treinos, setTreinos] = useState([]);  // Estado para armazenar os treinos
+
+  // Carregar os treinos quando o componente for montado
+  useEffect(() => {
+    const carregarTreinos = async () => {
+      try {
+        const treinosData = await fetchTreinosDoAluno('admin');  // Passando o ID do aluno (admin)
+        setTreinos(treinosData);  // Atualiza o estado com os treinos do aluno
+      } catch (error) {
+        console.error("Erro ao carregar os treinos: ", error);
+      }
+    };
+    carregarTreinos();
+  }, []);  // O efeito roda apenas uma vez, quando o componente for montado
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Meus Treinos</Text>
+      <FlatList
+        data={treinos}
+        keyExtractor={(item) => item.id}
+        renderItem={({ item }) => (
+          <View style={styles.cartaoTreino}>
+            <Text style={styles.nomeTreino}>Treino {item.id}</Text>
+            <Text style={styles.descricaoTreino}>Personal: {item.personalId}</Text>
+            <TouchableOpacity style={styles.botaoIniciar} onPress={() => onSelecionarTreino(item)}>
+              <Text style={styles.textoBotao}>INICIAR TREINO</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      />
+    </View>
+  );
+};
 
 // Tela de Exercício
-const TelaExercicio = ({ exercicio, onFinalizarExercicio }) => (
-  <View style={styles.container}>
-    <Text style={styles.titulo}>{exercicio.nome}</Text>
-    <View style={styles.detalhesExercicio}>
-      <Text style={styles.subtitulo}>Repetições</Text>
-      <Text style={styles.subtitulo}>Carga (Kg)</Text>
-      <Text style={styles.subtitulo}>Último treino</Text>
-      {/* Exemplo de repetições */}
-      <Text>12</Text>
-      <Text>20 Kg</Text>
-      <Text>12 x 20 kg</Text>
+const TelaExercicio = ({ treino, onFinalizarExercicio }) => {
+  const [exercicios, setExercicios] = useState([]);
+
+  useEffect(() => {
+    const carregarExercicios = async () => {
+      const exerciciosData = await fetchExercicios(); // Obtém todos os exercícios
+      const exerciciosSelecionados = [];
+
+      // Filtra os exercícios que estão no treino
+      Object.keys(treino.exercicios).forEach((exercicioId) => {
+        if (treino.exercicios[exercicioId]) {
+          exerciciosSelecionados.push(exerciciosData[exercicioId]);
+        }
+      });
+
+      setExercicios(exerciciosSelecionados); // Atualiza o estado com os exercícios do treino
+    };
+
+    carregarExercicios();
+  }, [treino]); // Carregar os exercícios sempre que o treino for alterado
+
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Treino {treino.id}</Text>
+      <FlatList
+        data={exercicios}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={({ item }) => (
+          <View style={styles.cartaoExercicio}>
+            <Text style={styles.nomeExercicio}>{item.nome}</Text>
+            <Text style={styles.grupoExercicio}>Grupo: {item.grupo}</Text>
+            <Text style={styles.detalheExercicio}>Carga: {item.peso}kg</Text>
+            <Text style={styles.detalheExercicio}>Séries: {item.series}</Text>
+            <Text style={styles.detalheExercicio}>Repetições: {item.repeticoes}</Text>
+
+            {/* Exibe o link do vídeo diretamente */}
+            {item.url_video && (
+              <Text style={styles.detalheExercicio}>
+                <Text style={{ color: '#1b6fa8' }}>Vídeo: </Text>
+                <Text>{item.url_video}</Text>
+              </Text>
+            )}
+
+            <TouchableOpacity style={styles.botaoFinalizar} onPress={onFinalizarExercicio}>
+              <Text style={styles.textoBotao}>FINALIZAR EXERCÍCIO</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      />
     </View>
-    <TouchableOpacity style={styles.botaoFinalizar} onPress={onFinalizarExercicio}>
-      <Text style={styles.textoBotao}>FINALIZAR EXERCÍCIO</Text>
-    </TouchableOpacity>
-  </View>
-);
+  );
+};
+
 
 // Modal para confirmar finalização do exercício
 const ModalFinalizarExercicio = ({ visivel, onCancelar, onConfirmar }) => (
@@ -64,7 +150,7 @@ const ModalFinalizarExercicio = ({ visivel, onCancelar, onConfirmar }) => (
 );
 
 // Componente principal que alterna entre as telas
-export default function App() {
+export default function Aluno() {
   const [treinoSelecionado, setTreinoSelecionado] = useState(null);
   const [modalVisivel, setModalVisivel] = useState(false);
 
@@ -84,7 +170,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       {treinoSelecionado ? (
-        <TelaExercicio exercicio={treinoSelecionado} onFinalizarExercicio={finalizarExercicio} />
+        <TelaExercicio treino={treinoSelecionado} onFinalizarExercicio={finalizarExercicio} />
       ) : (
         <ScrollView>
           <TelaListaTreinos onSelecionarTreino={iniciarTreino} />
@@ -109,6 +195,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
+    color: '#2e73b6',
   },
   cartaoTreino: {
     backgroundColor: '#2e73b6',
@@ -136,19 +223,43 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: 14,
   },
-  detalhesExercicio: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginVertical: 20,
+  cartaoExercicio: {
+    backgroundColor: '#ffffff',
+    padding: 16,
+    borderRadius: 8,
+    marginBottom: 12,
+    shadowColor: '#000',
+    shadowOpacity: 0.1,
+    shadowRadius: 10,
+    elevation: 5,
   },
-  subtitulo: {
-    fontSize: 16,
+  nomeExercicio: {
+    fontSize: 20,
     fontWeight: 'bold',
+    color: '#333',
+    marginBottom: 8,
+  },
+  grupoExercicio: {
+    fontSize: 16,
+    color: '#777',
+    marginBottom: 8,
+  },
+  detalheExercicio: {
+    fontSize: 14,
+    color: '#555',
+    marginBottom: 6,
+  },
+  botaoVideo: {
+    backgroundColor: '#5c88d1',
+    padding: 8,
+    borderRadius: 6,
+    alignItems: 'center',
+    marginBottom: 10,
   },
   botaoFinalizar: {
-    backgroundColor: '#1b6fa8',
-    padding: 12,
-    borderRadius: 8,
+    backgroundColor: '#f05c5c',
+    padding: 8,
+    borderRadius: 6,
     alignItems: 'center',
   },
   modalContainer: {
@@ -158,20 +269,19 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
   modalContent: {
-    width: 300,
-    padding: 20,
     backgroundColor: '#fff',
-    borderRadius: 10,
+    padding: 20,
+    borderRadius: 8,
+    width: '80%',
     alignItems: 'center',
   },
   modalTexto: {
-    fontSize: 16,
-    textAlign: 'center',
+    fontSize: 18,
     marginBottom: 20,
   },
   botoesModal: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-around',
     width: '100%',
   },
 });
