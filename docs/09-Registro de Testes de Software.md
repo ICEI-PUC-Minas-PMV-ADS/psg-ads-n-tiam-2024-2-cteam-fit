@@ -42,3 +42,8 @@ Agendamento de treinos: <br>
 ![image4](https://github.com/user-attachments/assets/3d3469dd-b404-4884-b52e-7ec175bc904f)
 
 ![image5](https://github.com/user-attachments/assets/dba9d27b-2ca9-4921-8947-7cea36077519)
+
+Tela de Cadastro de exercicio
+
+https://github.com/user-attachments/assets/0728453a-3af7-490c-a4ba-5670e2d94200
+
