@@ -31,3 +31,14 @@ GET com a tela de Aluno e de Historico do Aluno:<br>
 
 https://github.com/user-attachments/assets/6b9aa3c2-2450-4773-89da-47272b8fae82
 
+Agendamento de treinos: <br>
+
+![image1](https://github.com/user-attachments/assets/522f4d6b-00cc-4529-b345-acf4baf90317)
+
+![image2](https://github.com/user-attachments/assets/af96a2a0-3dba-460a-945c-967ebac9476b)
+
+![image3](https://github.com/user-attachments/assets/e5b11c06-753a-4dec-8e39-3180e2429a4b)
+
+![image4](https://github.com/user-attachments/assets/3d3469dd-b404-4884-b52e-7ec175bc904f)
+
+![image5](https://github.com/user-attachments/assets/dba9d27b-2ca9-4921-8947-7cea36077519)
