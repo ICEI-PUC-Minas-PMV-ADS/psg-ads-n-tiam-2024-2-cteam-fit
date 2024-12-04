@@ -26,3 +26,8 @@ Login de usuário:<br>
 Usuário logado redirecionado para página de treinos (Home):<br>
 ![Imagem do WhatsApp de 2024-11-19 à(s) 22 26 08_19c8c673](https://github.com/user-attachments/assets/48919b1b-3fff-4660-98e7-d11bc2e7e4ac)
 
+<br><br>
+GET com a tela de Aluno e de Historico do Aluno:<br>
+
+https://github.com/user-attachments/assets/6b9aa3c2-2450-4773-89da-47272b8fae82
+
