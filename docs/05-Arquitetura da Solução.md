@@ -43,39 +43,82 @@ O grupo optou por utilizar o Firebase, que é um banco de dados NoSQL, portanto 
 
 ```yaml
 {
-
-{
-  "Exercicios": {
-    "id_exercicio_1": {
-      "carga": 90,
-      "grupo_muscular": "pernas",
-      "link_video": "",
-      "nome": "Leg Press 45",
+  "exercicios": {
+    "exercicioId1": {
+      "grupo": "peito",
+      "nome": "supino reto",
+      "peso": 50,
+      "repeticoes": 10,
+      "series": 4,
+      "url_video": "https://www.youtube.com.br"
+    },
+    "exercicioId2": {
+      "grupo": "biceps",
+      "nome": "rosca direta",
+      "peso": 25,
       "repeticoes": 12,
-      "serie": 3
+      "series": 3,
+      "url_video": "https://www.youtube.com"
     }
   },
-  "Fichas": {
-    "id_ficha_1": {
-      "data_criacao": "2024-10-02",
-      "id_ficha": 32154,
-      "matricula_usuario": 1234,
-      "status": "ativa",
-      "validade": "2024-11-02"
+  "treinos": {
+    "treinoId1": {
+      "alunoId": "admin",
+      "data": "2024-12-01",
+      "exercicios": {
+        "exercicioId1": true,
+        "exercicioId2": true
+      },
+      "personalId": "personalId1"
+    },
+    "treinoId2": {
+      "alunoId": "admin",
+      "data": "2024-12-01",
+      "exercicios": {
+        "exercicioId1": true
+      },
+      "personalId": "personalId1"
+    },
+    "treinoId3": {
+      "alunoId": "admin",
+      "data": "2024-12-01",
+      "exercicios": {
+        "exercicioId1": true,
+        "exercicioId2": true
+      },
+      "personalId": "personalId1"
     }
   },
-  "Usuarios": {
-    "id_usuario_1": {
-      "data_nasc": "",
-      "email": "",
-      "fichas": "Fichas",
-      "matricula": 1234,
-      "nome": "",
-      "objetivo": "",
-      "role": ""
+  "users": {
+    "admin": {
+      "dados": {
+        "altura": 180,
+        "idade": 20,
+        "peso": 75
+      },
+      "email": "cteamfit.app@gmail.com",
+      "historico": {
+        "treinoId3": {
+          "completo": true,
+          "data": "2024-11-22"
+        }
+      },
+      "nome": "admin",
+      "tipo": "aluno",
+      "treinos": {
+        "treinoId1": true,
+        "treinoId2": true
+      }
+    },
+    "personalId1": {
+      "alunos": {
+        "admin": true
+      },
+      "email": "andre@gmail.com",
+      "nome": "André",
+      "tipo": "personal"
     }
   }
-}
 }
 
 ```
