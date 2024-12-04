@@ -71,78 +71,53 @@ const TelaHistoricoTreinos = ({ onSelecionarTreino, historicoTreinos }) => (
   </View>
 );
 
-// Tela de Detalhes do Treino -> PRECISA SER CORRIGIDO AINDA
 const TelaDetalhesTreino = ({ treino, onFinalizarTreino }) => {
   const [exercicios, setExercicios] = useState([]);
 
   useEffect(() => {
-    const carregarExercicios = async () => {
-      if (treino && treino.exercicios && Object.keys(treino.exercicios).length > 0) {
-        const exerciciosSelecionados = await Promise.all(Object.keys(treino.exercicios).map(async (exercicioId) => {
-          console.log(`Exercício ${exercicioId}:`, treino.exercicios[exercicioId]); // Loga o ID de cada exercício
-          const exercicioRef = ref(db, `exercicios/${exercicioId}`);
-          const exercicioSnapshot = await get(exercicioRef);
-          if (exercicioSnapshot.exists()) {
-            console.log('Exercício encontrado:', exercicioSnapshot.val());
-            return exercicioSnapshot.val(); // Retorna os dados do exercício
-          }
-          return null; // Caso o exercício não exista
-        }));
-    
-        const exerciciosFiltrados = exerciciosSelecionados.filter(exercicio => exercicio !== null);
-        setExercicios(exerciciosFiltrados);
-        console.log('Exercícios após atualização do estado:', exerciciosFiltrados);
-      } else {
-        setExercicios([]); // Caso não haja exercícios, garante que o estado seja limpo
-      }
-    };
-    
-    console.log('Exercícios:', treino.exercicios); // Loga a estrutura de treino.exercicios
-    carregarExercicios();
-  }, [treino]);  
-  
+    if (treino && treino.exercicios) {
+      const exerciciosFiltrados = Object.keys(treino.exercicios).map((key) => treino.exercicios[key]);
+      setExercicios(exerciciosFiltrados);
+    }
+  }, [treino]);
+
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>{treino.nome}</Text>
+      <Text style={styles.titulo}>{treino.nome || 'Detalhes do Treino'}</Text>
       <ScrollView>
-        <View style={styles.detalhesTreino}>
-          <Text style={styles.subtitulo}>Descrição:</Text>
-          <Text>{treino.descricao}</Text>
-          <Text style={styles.subtitulo}>Data:</Text>
-          <Text>{treino.data}</Text>
-  
+        <View style={styles.detalhesContainer}>
+          <View style={styles.infoGeral}>
+            <Text style={styles.subtitulo}>Data:</Text>
+            <Text style={styles.texto}>{treino.data}</Text>
+          </View>
+
           <Text style={styles.subtitulo}>Exercícios:</Text>
           {exercicios.length > 0 ? (
-            exercicios.map((exercicio, index) => {
-              console.log(`Exercício ${index}:`, exercicio);
-              return (
-                <View key={index} style={styles.cartaoExercicio}>
-                  <Text style={styles.nomeExercicio}>{exercicio.nome}</Text>
-                  <Text style={styles.grupoExercicio}>Grupo: {exercicio.grupo}</Text>
-                  <Text style={styles.detalheExercicio}>Carga: {exercicio.peso}kg</Text>
-                  <Text style={styles.detalheExercicio}>Séries: {exercicio.series}</Text>
-                  <Text style={styles.detalheExercicio}>Repetições: {exercicio.repeticoes}</Text>
-  
-                  {exercicio.url_video && (
-                    <Text style={styles.detalheExercicio}>
-                      <Text style={{ color: '#1b6fa8' }}>Vídeo: </Text>
-                      <Text>{exercicio.url_video}</Text>
-                    </Text>
-                  )}
-                </View>
-              );
-            })
+            exercicios.map((exercicio, index) => (
+              <View key={index} style={styles.cartaoExercicio}>
+                <Text style={styles.nomeExercicio}>{exercicio.nome}</Text>
+                <Text style={styles.grupoExercicio}>Grupo: {exercicio.grupo}</Text>
+                <Text style={styles.detalheExercicio}>Carga: {exercicio.peso}kg</Text>
+                <Text style={styles.detalheExercicio}>Séries: {exercicio.series}</Text>
+                <Text style={styles.detalheExercicio}>Repetições: {exercicio.repeticoes}</Text>
+                {exercicio.url_video && (
+                  <Text style={[styles.detalheExercicio, { color: '#1b6fa8' }]}>
+                    Vídeo: <Text>{exercicio.url_video}</Text>
+                  </Text>
+                )}
+              </View>
+            ))
           ) : (
-            <Text style={styles.detalheExercicio}>Nenhum exercício encontrado.</Text> // Caso não haja exercícios
+            <Text style={styles.texto}>Nenhum exercício encontrado.</Text>
           )}
         </View>
-  
+
         <TouchableOpacity style={styles.botaoFinalizar} onPress={onFinalizarTreino}>
           <Text style={styles.textoBotao}>SOLICITAR NOVAMENTE O TREINO</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
-  );  
+  );
 };
 
 
@@ -285,5 +260,65 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
+  },
+  detalhesContainer: {
+    marginBottom: 20,
+  },
+  infoGeral: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 20,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  subtitulo: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  texto: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  cartaoExercicio: {
+    backgroundColor: '#fff',
+    padding: 15,
+    borderRadius: 8,
+    marginBottom: 15,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.2,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  nomeExercicio: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 5,
+  },
+  grupoExercicio: {
+    fontSize: 16,
+    marginBottom: 5,
+    color: '#555',
+  },
+  detalheExercicio: {
+    fontSize: 14,
+    color: '#777',
+  },
+  botaoFinalizar: {
+    backgroundColor: '#1b6fa8',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  textoBotao: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });
