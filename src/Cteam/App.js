@@ -3,6 +3,8 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Aluno from './pages/Aluno';
+import Login from './pages/Login'
+import Cadastro from './pages/Cadastro'
 import Historico from './pages/Historico';
 
 const Stack = createStackNavigator();
@@ -11,7 +13,7 @@ function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator
-        initialRouteName="Aluno"
+        initialRouteName="Login"
         screenOptions={{
           headerStyle: {
             backgroundColor: '#1b6fa8',
@@ -22,6 +24,9 @@ function App() {
           },
         }}
       >
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Cadastro" component={Cadastro} />
+
         <Stack.Screen
           name="Aluno"
           component={Aluno} // A tela de aluno
