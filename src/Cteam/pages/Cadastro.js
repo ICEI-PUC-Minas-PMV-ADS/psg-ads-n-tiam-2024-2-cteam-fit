@@ -3,8 +3,9 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { doc, setDoc } from "firebase/firestore";
-import { auth, db } from './firebaseConfig.js';
+import { auth, db, fb } from './firebaseConfig.js';
+import { ref, set } from "firebase/database";
+
 
 const Cadastro = () => {
   const navigation = useNavigation();
@@ -19,19 +20,19 @@ const Cadastro = () => {
       return;
     }
     if (password !== confirmPassword) {
-      alert("A senha deve ser a mesma");
+      alert("As senhas não coincidem.");
       return;
     }
     try {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
-
-      await setDoc(doc(db, "usuarios", user.uid),
-   {
+  
+      // Escrevendo no Realtime Database
+      await set(ref(db, `usuarios/${user.uid}`), {
         name: name,
         email: user.email,
       });
-
+  
       alert("Usuário cadastrado com sucesso!");
       navigation.navigate("Login");
     } catch (error) {
