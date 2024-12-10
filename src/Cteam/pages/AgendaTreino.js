@@ -4,8 +4,11 @@ import Calendario from '../components/Agendamento/SeleData';
 import SeleHora from '../components/Agendamento/SeleHora';
 import Descricao from '../components/Agendamento/Descricao';
 import { useState } from 'react';
+import { useNavigation } from '@react-navigation/native'; // Adicionando a importação correta
 
-export default function App() {
+
+export default function AgendaTreino() { 
+  const navigation = useNavigation();
   const [data, setData] = useState(null);
   const [hora, setHora] = useState(null);
   const [descricao, setDescricao] = useState('');

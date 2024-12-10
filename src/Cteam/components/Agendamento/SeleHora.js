@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text } from 'react-native';
+import {StyleSheet, View, Text} from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 
@@ -39,6 +39,7 @@ const styles = StyleSheet.create({
         backgroundColor:"#bfe4fa",
         alignItems:"center",
         height:55,
+        width:390,
         borderRadius:10,
         shadowColor: '#000', 
         shadowOffset: { width: 1, height: 1 },

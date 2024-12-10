@@ -4,8 +4,10 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Aluno from './pages/Aluno';
 import Login from './pages/Login'
+import AgendaTreino from './pages/AgendaTreino';
 import Cadastro from './pages/Cadastro'
 import Historico from './pages/Historico';
+
 
 const Stack = createStackNavigator();
 
@@ -26,6 +28,7 @@ function App() {
       >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
+        <Stack.Screen name="AgendaTreino" component={AgendaTreino} />
 
         <Stack.Screen
           name="Aluno"
