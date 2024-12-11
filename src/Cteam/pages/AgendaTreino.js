@@ -74,9 +74,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#e6f3fe',
-    paddingTop: 80,
+    paddingTop: 50,
     paddingLeft:1,
     paddingRight:1,
+    
   },
   Texto: {
     color: "#000",
@@ -87,7 +88,8 @@ const styles = StyleSheet.create({
   },
   title:{
     alignItems:"center",
-    marginBottom:40
+    marginBottom:40,
+    marginTop:0
   },
   naviga:{
     alignItems:"center",
