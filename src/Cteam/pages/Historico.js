@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Modal, Button, ScrollView } from 'react-native';
-import { getDatabase, ref, get } from 'firebase/database'; // Certifique-se de importar as funções corretamente
-import { db } from './firebaseConfig'; // Certifique-se de configurar o Firebase corretamente
+import { getDatabase, ref, get } from 'firebase/database'; 
+import { db } from './firebaseConfig'; 
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const fetchHistoricoTreinos = async (userId) => {
   const historicoRef = ref(db, `users/${userId}/historico`);
@@ -71,7 +72,7 @@ const TelaHistoricoTreinos = ({ onSelecionarTreino, historicoTreinos }) => (
   </View>
 );
 
-const TelaDetalhesTreino = ({ treino, onFinalizarTreino }) => {
+const TelaDetalhesTreino = ({ treino, onFinalizarTreino, onVoltarHistorico }) => {
   const [exercicios, setExercicios] = useState([]);
 
   useEffect(() => {
@@ -112,8 +113,8 @@ const TelaDetalhesTreino = ({ treino, onFinalizarTreino }) => {
           )}
         </View>
 
-        <TouchableOpacity style={styles.botaoFinalizar} onPress={onFinalizarTreino}>
-          <Text style={styles.textoBotao}>SOLICITAR NOVAMENTE O TREINO</Text>
+        <TouchableOpacity style={[styles.botaoFinalizar, { backgroundColor: '#777' }]} onPress={onVoltarHistorico}>
+          <Text style={styles.textoBotao}>VOLTAR AO HISTÓRICO</Text>
         </TouchableOpacity>
       </ScrollView>
     </View>
@@ -144,10 +145,10 @@ export default function TelaHistorico() {
 
   useEffect(() => {
     const carregarHistorico = async () => {
-      const userId = 'admin'; // ID do admin (ou outro usuário logado)
+      const userId = await AsyncStorage.getItem('userId');
       const dadosHistorico = await fetchHistoricoTreinos(userId);
       if (dadosHistorico) {
-        setHistoricoTreinos(dadosHistorico); // Agora os treinos devem ser carregados corretamente
+        setHistoricoTreinos(dadosHistorico); 
       }
     };
     carregarHistorico();
@@ -166,10 +167,19 @@ export default function TelaHistorico() {
     setTreinoSelecionado(null); // Volta para a lista de treinos após finalizar
   };
 
+  // Função para voltar ao histórico
+  const voltarAoHistorico = () => {
+    setTreinoSelecionado(null);
+  };
+
   return (
     <View style={styles.container}>
       {treinoSelecionado ? (
-        <TelaDetalhesTreino treino={treinoSelecionado} onFinalizarTreino={finalizarTreino} />
+        <TelaDetalhesTreino
+          treino={treinoSelecionado}
+          onFinalizarTreino={finalizarTreino}
+          onVoltarHistorico={voltarAoHistorico}
+        />
       ) : (
         <TelaHistoricoTreinos historicoTreinos={historicoTreinos} onSelecionarTreino={selecionarTreino} />
       )}

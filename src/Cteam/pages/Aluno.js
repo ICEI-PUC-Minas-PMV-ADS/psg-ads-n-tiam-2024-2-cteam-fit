@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Modal, Button, ScrollView, Image } from 'react-native';
 import { db } from './firebaseConfig';
 import { get, ref } from "firebase/database";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 // Função para obter os exercícios
 const fetchExercicios = async () => {
@@ -50,14 +51,15 @@ const TelaListaTreinos = ({ onSelecionarTreino }) => {
   useEffect(() => {
     const carregarTreinos = async () => {
       try {
-        const treinosData = await fetchTreinosDoAluno('admin');  // Passando o ID do aluno (admin)
+        const userId = await AsyncStorage.getItem('userId');
+        const treinosData = await fetchTreinosDoAluno(userId);
         setTreinos(treinosData);  // Atualiza o estado com os treinos do aluno
       } catch (error) {
         console.error("Erro ao carregar os treinos: ", error);
       }
     };
     carregarTreinos();
-  }, []);  // O efeito roda apenas uma vez, quando o componente for montado
+  }, []); 
 
   return (
     <View style={styles.container}>
@@ -80,7 +82,7 @@ const TelaListaTreinos = ({ onSelecionarTreino }) => {
 };
 
 // Tela de Exercício
-const TelaExercicio = ({ treino, onFinalizarExercicio }) => {
+const TelaExercicio = ({ treino, onFinalizarExercicio, onVoltar }) => {
   const [exercicios, setExercicios] = useState([]);
 
   useEffect(() => {
@@ -126,6 +128,9 @@ const TelaExercicio = ({ treino, onFinalizarExercicio }) => {
             <TouchableOpacity style={styles.botaoFinalizar} onPress={onFinalizarExercicio}>
               <Text style={styles.textoBotao}>FINALIZAR EXERCÍCIO</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={[styles.botaoVoltar, { backgroundColor: '#777' }]} onPress={onVoltar}>
+              <Text style={styles.textoBotao}>VOLTAR AOS TREINOS</Text>
+            </TouchableOpacity>
           </View>
         )}
       />
@@ -164,13 +169,21 @@ export default function Aluno() {
 
   const confirmarFinalizacao = () => {
     setModalVisivel(false);
-    setTreinoSelecionado(null); // Volta para a lista de treinos após finalizar
+    setTreinoSelecionado(null); 
+  };
+
+  const voltarParaLista = () => {
+    setTreinoSelecionado(null);
   };
 
   return (
     <View style={styles.container}>
       {treinoSelecionado ? (
-        <TelaExercicio treino={treinoSelecionado} onFinalizarExercicio={finalizarExercicio} />
+        <TelaExercicio
+          treino={treinoSelecionado}
+          onFinalizarExercicio={finalizarExercicio}
+          onVoltar={voltarParaLista}
+        />
       ) : (
         <ScrollView>
           <TelaListaTreinos onSelecionarTreino={iniciarTreino} />
@@ -258,9 +271,10 @@ const styles = StyleSheet.create({
   },
   botaoFinalizar: {
     backgroundColor: '#f05c5c',
-    padding: 8,
-    borderRadius: 6,
+    padding: 15,
+    borderRadius: 8,
     alignItems: 'center',
+    marginTop: 20
   },
   modalContainer: {
     flex: 1,
@@ -283,5 +297,17 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     width: '100%',
+  },
+  botaoVoltar: {
+    backgroundColor: '#1b6fa8',
+    padding: 15,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 20,
+  },
+  textoVoltar: {
+    color: '#fff',
+    fontSize: 16,
+    fontWeight: 'bold',
   },
 });

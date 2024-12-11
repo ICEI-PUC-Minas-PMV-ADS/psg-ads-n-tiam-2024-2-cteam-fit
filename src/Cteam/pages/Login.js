@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { TextInput, Button } from 'react-native-paper';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import AsyncStorage from '@react-native-async-storage/async-storage'
 
 const Login = () => {
   const navigation = useNavigation();
@@ -14,7 +15,8 @@ const Login = () => {
     try {
       const userCredential = await signInWithEmailAndPassword(auth, userMail, userPassword);
       const user = userCredential.user;
-      console.log(user);
+      await AsyncStorage.setItem('userId', user.uid);
+      console.log(user.uid);
       alert("Login realizado com sucesso!");
       navigation.navigate("Aluno");
     } catch (error) {
