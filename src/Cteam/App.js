@@ -11,6 +11,7 @@ import TreinosAgendados from './pages/TreinosAgendados';
 import RecuperacaoDeSenha from './pages/RecuperacaoDeSenha';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
+import CadastroExercicio from './pages/CadastroExercicio'
 
 const Stack = createStackNavigator();
 
@@ -65,6 +66,7 @@ function App() {
         />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="RecuperacaoDeSenha" component={RecuperacaoDeSenha} />
+        <Stack.Screen name="CadastroExercicio" component={CadastroExercicio} />
         <Stack.Screen
           name="Aluno"
           options={({ navigation }) => ({
