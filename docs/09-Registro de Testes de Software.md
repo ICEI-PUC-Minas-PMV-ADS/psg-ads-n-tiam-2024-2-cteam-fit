@@ -47,3 +47,9 @@ Tela de Cadastro de exercicio
 
 https://github.com/user-attachments/assets/0728453a-3af7-490c-a4ba-5670e2d94200
 
+<br><br>
+Teste Final de todo o aplicativo
+
+
+https://github.com/user-attachments/assets/0f526743-dfd5-48fd-ac75-f45ff7f840a0
+
