@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
     fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 20,
-    color: '#2e73b6',
+    color: 'black',
   },
   cartaoTreino: {
     backgroundColor: '#2e73b6',

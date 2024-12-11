@@ -16,7 +16,6 @@ const Login = () => {
       const userCredential = await signInWithEmailAndPassword(auth, userMail, userPassword);
       const user = userCredential.user;
       await AsyncStorage.setItem('userId', user.uid);
-      console.log(user.uid);
       alert("Login realizado com sucesso!");
       navigation.navigate("Aluno");
     } catch (error) {
@@ -55,18 +54,12 @@ const Login = () => {
         Entrar
       </Button>
 
-      <TouchableOpacity onPress={() => alert("Recuperação de senha ainda não implementada.")}>
+      <TouchableOpacity onPress={() => navigation.navigate('RecuperacaoDeSenha')}>
         <Text style={styles.link}>Esqueceu sua senha?</Text>
       </TouchableOpacity>
 
       <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
         <Text style={styles.link}>Não possui conta? Cadastre-se</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('AgendaTreino')}>
-        <Text style={styles.link}>Agenda treino</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('TreinosAgendados')}>
-        <Text style={styles.link}>Treinos Agendados</Text>
       </TouchableOpacity>
     </View>
   );
