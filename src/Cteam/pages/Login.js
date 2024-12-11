@@ -61,12 +61,7 @@ const Login = () => {
       <TouchableOpacity onPress={() => navigation.navigate('Cadastro')}>
         <Text style={styles.link}>Não possui conta? Cadastre-se</Text>
       </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('AgendaTreino')}>
-        <Text style={styles.link}>Agenda treino</Text>
-      </TouchableOpacity>
-      <TouchableOpacity onPress={() => navigation.navigate('CadastroExercicio')}>
-        <Text style={styles.link}>Cadastra Exercicio</Text>
-      </TouchableOpacity>
+
 
     </View>
   );

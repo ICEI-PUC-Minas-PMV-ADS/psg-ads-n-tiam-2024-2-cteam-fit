@@ -12,6 +12,7 @@ import RecuperacaoDeSenha from './pages/RecuperacaoDeSenha';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import CadastroExercicio from './pages/CadastroExercicio'
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const Stack = createStackNavigator();
 
@@ -27,6 +28,9 @@ function BottomNavbar({ navigation }) {
       </TouchableOpacity>
       <TouchableOpacity onPress={() => navigation.navigate('AgendaTreino')}>
         <Icon name="calendar" size={30} color="#fff" />
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('CadastroExercicio')}>
+        <AntDesign name="plus" size={30} color="#fff" />
       </TouchableOpacity>
     </View>
   );
@@ -66,7 +70,6 @@ function App() {
         />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="RecuperacaoDeSenha" component={RecuperacaoDeSenha} />
-        <Stack.Screen name="CadastroExercicio" component={CadastroExercicio} />
         <Stack.Screen
           name="Aluno"
           options={({ navigation }) => ({
@@ -86,6 +89,26 @@ function App() {
             </ScreenWithNavbar>
           )}
         />
+        <Stack.Screen
+          name="CadastroExercicio"
+          options={({ navigation }) => ({
+            title: 'CadastroExercicio',
+            headerLeft: () => (
+              <TouchableOpacity
+                style={styles.headerButton}
+                onPress={() => navigation.navigate('CadastroExercicio')}
+              >
+                <SimpleLineIcons name="logout" size={24} color="#fff" />
+              </TouchableOpacity>
+            ),
+          })}
+          component={(props) => (
+            <ScreenWithNavbar navigation={props.navigation}>
+              <CadastroExercicio {...props} />
+            </ScreenWithNavbar>
+          )}
+        />
+
         <Stack.Screen
           name="AgendaTreino"
           options={({ navigation }) => ({
