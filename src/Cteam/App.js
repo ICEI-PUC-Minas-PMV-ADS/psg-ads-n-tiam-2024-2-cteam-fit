@@ -162,6 +162,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#1b6fa8',
     padding: 10,
+    paddingBottom: 20,
     position: 'absolute',
     bottom: 0,
     width: '100%',
