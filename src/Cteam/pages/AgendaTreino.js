@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Button, Alert } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert, TouchableOpacity } from 'react-native';
 import Calendario from '../components/Agendamento/SeleData';
 import SeleHora from '../components/Agendamento/SeleHora';
 import Descricao from '../components/Agendamento/Descricao';
@@ -48,7 +48,9 @@ export default function AgendaTreino() {
 
   return (
     <View style={styles.container}>
+      <View style={styles.title}>
       <Text style={styles.Texto}>Agendamento de treino</Text>
+      </View>   
       <View>
         <Calendario salvarData={salvarData} />
       </View>
@@ -59,6 +61,11 @@ export default function AgendaTreino() {
         <Descricao salvarDescricao={salvarDescricao} />
       </View>
       <Button title="Confirmar" onPress={handleConfirm} />
+      <View style={styles.naviga}>
+      <TouchableOpacity onPress={() => navigation.navigate('TreinosAgendados')}>
+        <Text style={styles.link}>Ver treinos já agendados</Text>
+      </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -68,12 +75,22 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#e6f3fe',
     paddingTop: 80,
-    alignItems: "center"
+    paddingLeft:1,
+    paddingRight:1,
   },
   Texto: {
     color: "#000",
     fontWeight: "bold",
     fontSize: 30,
-    height: 100
+    height: "auto",
+    alignItems:"center"
+  },
+  title:{
+    alignItems:"center",
+    marginBottom:40
+  },
+  naviga:{
+    alignItems:"center",
+    marginTop:100
   }
 });

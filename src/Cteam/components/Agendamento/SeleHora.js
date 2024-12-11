@@ -15,7 +15,7 @@ export default function SeleHora({ salvarHora }) {
 
   return (
     <View style={styles.Conteiner}>
-      <Text style={styles.Titulo}>Selecione a Hora</Text>
+      <Text style={styles.Titulo}>Selecione a hora</Text>
       <DateTimePicker
         value={time}
         mode="time"
@@ -39,13 +39,13 @@ const styles = StyleSheet.create({
         backgroundColor:"#bfe4fa",
         alignItems:"center",
         height:55,
-        width:390,
+        width: "100%",
         borderRadius:10,
         shadowColor: '#000', 
         shadowOffset: { width: 1, height: 1 },
         shadowOpacity: 0.30, 
         shadowRadius: 5.84,
-        marginBottom:70
+        marginBottom:50
         }
   }
   );

@@ -17,6 +17,10 @@ function App() {
       <Stack.Navigator
         initialRouteName="Login"
         screenOptions={{
+          headerShown: false, // Oculta o cabeçalho em todas as páginas
+        }}
+        /*
+        screenOptions={{
           headerStyle: {
             backgroundColor: '#1b6fa8',
           },
@@ -24,7 +28,9 @@ function App() {
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+          
         }}
+          */
       >
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
