@@ -1,49 +1,83 @@
 import React, { useState } from 'react';
-import {StyleSheet, View, Text} from "react-native";
+import { StyleSheet, View, Text, Platform, TouchableWithoutFeedback } from "react-native";
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 export default function SeleData({ salvarData }) {
   const [date, setDate] = useState(new Date());
+  const [showPicker, setShowPicker] = useState(false);
 
   const onChange = (event, selectedDate) => {
     const currentDate = selectedDate || date;
+    if (Platform.OS === 'android') setShowPicker(false);
     setDate(currentDate);
     salvarData(currentDate);
   };
 
+  if (Platform.OS === 'ios') {
+    return (
+      <View style={styles.DateBoxiphone}>
+        <Text style={styles.Title}>Selecione a data</Text>
+        <DateTimePicker
+          value={date}
+          mode="date"
+          display="default"
+          onChange={onChange}
+        />
+      </View>
+    );
+  }
+
   return (
-    <View style={styles.Conteiner}>
-      <Text style={styles.Titulo}>Selecione a data</Text>
-      <DateTimePicker
-        value={date}
-        mode="date"
-        display="default"
-        onChange={onChange}
-      />
+    <View style={styles.Container}>
+      <TouchableWithoutFeedback onPress={() => setShowPicker(true)}>
+        <View style={styles.DateBox}>
+          <Text style={styles.Title}>Selecione a data</Text>
+          <Text style={styles.DateText}>
+            {date.toLocaleDateString()}
+          </Text>
+        </View>
+      </TouchableWithoutFeedback>
+      {showPicker && (
+        <DateTimePicker
+          value={date}
+          mode="date"
+          display="default"
+          onChange={onChange}
+        />
+      )}
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-  Titulo: {
+  Title: {
     fontWeight: "bold",
-    fontSize: 20,
-    alignItems: "center",
-    paddingLeft: 6,
-    paddingRight: 15,
+    fontSize: 16,
   },
-  Conteiner: {
-    flexDirection: 'row',
-    backgroundColor: "#bfe4fa",
+  DateText: {
+    fontSize: 14,
+    color: "#000",
+  },
+  Container: {
     alignItems: "center",
-    height: 55,
-    width: "100%",
+    marginBottom: 20,
+  },
+  DateBox: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#2e73b6",
+    padding: 10,
     borderRadius: 10,
-    shadowColor: '#000',
-    shadowOffset: { width: 1, height: 1 },
-    shadowOpacity: 0.30,
-    shadowRadius: 5.84,
-    marginBottom: 70,
+    width: "100%",
+    alignItems: "center",
+  },
+  DateBoxiphone: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    backgroundColor: "#2e73b6",
+    padding: 10,
+    borderRadius: 10,
+    width: "100%",
+    alignItems: "center",
   },
 });
-
