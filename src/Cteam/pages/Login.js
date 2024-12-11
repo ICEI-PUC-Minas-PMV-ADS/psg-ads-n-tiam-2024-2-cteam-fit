@@ -65,6 +65,9 @@ const Login = () => {
       <TouchableOpacity onPress={() => navigation.navigate('AgendaTreino')}>
         <Text style={styles.link}>Agenda treino</Text>
       </TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('TreinosAgendados')}>
+        <Text style={styles.link}>Treinos Agendados</Text>
+      </TouchableOpacity>
     </View>
   );
 };

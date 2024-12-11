@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import AgendaTreino from './pages/AgendaTreino';
 import Cadastro from './pages/Cadastro';
 import Historico from './pages/Historico';
+import TreinosAgendados from './pages/TreinosAgendados';
 
 const Stack = createStackNavigator();
 
@@ -28,6 +29,7 @@ function App() {
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Cadastro" component={Cadastro} />
         <Stack.Screen name="AgendaTreino" component={AgendaTreino} />
+        <Stack.Screen name="TreinosAgendados" component={TreinosAgendados} />
 
         <Stack.Screen
           name="Aluno"

@@ -4,8 +4,9 @@ import Calendario from '../components/Agendamento/SeleData';
 import SeleHora from '../components/Agendamento/SeleHora';
 import Descricao from '../components/Agendamento/Descricao';
 import { useState } from 'react';
-import { useNavigation } from '@react-navigation/native'; // Adicionando a importação correta
-
+import { useNavigation } from '@react-navigation/native'; 
+import { auth, db } from './firebaseConfig'; // Importando o db de firebaseConfig
+import { ref, push } from "firebase/database"; // Certificando-se de importar o push
 
 export default function AgendaTreino() { 
   const navigation = useNavigation();
@@ -18,12 +19,36 @@ export default function AgendaTreino() {
   const salvarDescricao = (param) => { setDescricao(param); };
 
   const handleConfirm = () => {
-    Alert.alert('Confirmar', `Data: ${data ? data.toLocaleDateString() : 'N/A'} Hora: ${hora ? hora.toLocaleTimeString() : 'N/A'} Descrição: ${descricao}`);
+    if (!data || !hora || !descricao) {
+      Alert.alert('Erro', 'Por favor, preencha todos os campos.');
+      return;
+    }
+
+    // Criando o objeto de agendamento
+    const novoAgendamento = {
+      data: data.toLocaleDateString(), // Formata a data para o formato 'DD/MM/YYYY'
+      hora: hora.toLocaleTimeString(), // Formata a hora para 'HH:mm'
+      descricao: descricao,
+    };
+
+    // Referência ao nó de agendamentos no Firebase
+    const agendamentosRef = ref(db, 'agendamento'); // Usando o 'db' importado de firebaseConfig
+
+    // Salvando o novo agendamento no Firebase
+    push(agendamentosRef, novoAgendamento)
+      .then(() => {
+        Alert.alert('Sucesso', 'Agendamento salvo com sucesso!');
+        // Redireciona para a página de agendamentos, por exemplo
+        navigation.goBack();
+      })
+      .catch((error) => {
+        Alert.alert('Erro', 'Erro ao salvar o agendamento: ' + error.message);
+      });
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.Texto} >Agendamento de treino</Text>
+      <Text style={styles.Texto}>Agendamento de treino</Text>
       <View>
         <Calendario salvarData={salvarData} />
       </View>
@@ -45,10 +70,10 @@ const styles = StyleSheet.create({
     paddingTop: 80,
     alignItems: "center"
   },
-  Texto:{
-    color: "#",
-    fontWeight:"bold",
-    fontSize:30,
-    height:100
-}
+  Texto: {
+    color: "#000",
+    fontWeight: "bold",
+    fontSize: 30,
+    height: 100
+  }
 });
